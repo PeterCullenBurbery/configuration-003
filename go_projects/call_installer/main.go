@@ -22,8 +22,9 @@ func main() {
 	installCherryTreeExe := filepath.Join(baseDir, "go_projects", "install_cherry_tree", "install_cherry_tree.exe")
 	installMinicondaExe := filepath.Join(baseDir, "go_projects", "install_miniconda", "install_miniconda.exe")
 	installSQLDeveloperExe := filepath.Join(baseDir, "go_projects", "install_sql_developer", "install_sql_developer.exe")
+	installNirsoftExe := filepath.Join(baseDir, "go_projects", "install_nirsoft", "install_nirsoft.exe")
 
-	// Check if what-to-install.yaml exists
+	// === Check config file exists ===
 	if _, err := os.Stat(yamlPath); err != nil {
 		log.Fatalf("❌ Could not find what-to-install.yaml at: %s\n%v", yamlPath, err)
 	}
@@ -79,4 +80,17 @@ func main() {
 		log.Fatalf("❌ install_sql_developer.exe failed: %v", err)
 	}
 	log.Println("✅ SQL Developer installation completed.")
+
+	// === Run install_nirsoft.exe ===
+	if _, err := os.Stat(installNirsoftExe); err != nil {
+		log.Fatalf("❌ Could not find install_nirsoft.exe at: %s\n%v", installNirsoftExe, err)
+	}
+	log.Printf("🧰 Running: %s\n", installNirsoftExe)
+	cmd5 := exec.Command(installNirsoftExe)
+	cmd5.Stdout = os.Stdout
+	cmd5.Stderr = os.Stderr
+	if err := cmd5.Run(); err != nil {
+		log.Fatalf("❌ install_nirsoft.exe failed: %v", err)
+	}
+	log.Println("✅ NirSoft installation completed.")
 }
