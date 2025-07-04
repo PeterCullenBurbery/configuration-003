@@ -10,57 +10,56 @@ import (
 )
 
 func main() {
-	const downloadURL = "https://download.oracle.com/otn_software/java/sqldeveloper/sqldeveloper-24.3.1.347.1826-x64.zip"
-	const zipName = "sqldeveloper-24.3.1.347.1826-x64.zip"
+	downloadURL := "https://download.oracle.com/otn_software/java/sqldeveloper/sqldeveloper-24.3.1.347.1826-x64.zip"
+	baseDir := `C:\downloads\sql-developer`
+	fileName := "sqldeveloper-24.3.1.347.1826-x64.zip"
+	downloadPath := filepath.Join(baseDir, fileName)
 
-	// Get timestamp before download
-	t1, err := date_time_functions.Date_time_stamp()
-	if err != nil {
-		log.Fatalf("❌ Failed to get download timestamp: %v", err)
-	}
-	safeTimestamp1 := date_time_functions.Safe_time_stamp(t1, 1)
-	baseDir := filepath.Join(`C:\downloads\sql-developer`, safeTimestamp1)
-
+	// Ensure base download directory exists
 	if err := os.MkdirAll(baseDir, 0755); err != nil {
-		log.Fatalf("❌ Failed to create download directory: %v", err)
+		log.Fatalf("❌ Failed to create base directory: %v", err)
 	}
 
-	zipPath := filepath.Join(baseDir, zipName)
-
-	// Download the file
-	log.Printf("📥 Downloading SQL Developer to: %s", zipPath)
-	if err := system_management_functions.Download_file(zipPath, downloadURL); err != nil {
+	// Download ZIP
+	log.Println("🌐 Downloading SQL Developer...")
+	if err := system_management_functions.Download_file(downloadPath, downloadURL); err != nil {
 		log.Fatalf("❌ Download failed: %v", err)
 	}
+	log.Println("✅ Download completed.")
 
-	// Get timestamp after download
-	t2, err := date_time_functions.Date_time_stamp()
+	// Get safe timestamp
+	rawTS, err := date_time_functions.Date_time_stamp()
 	if err != nil {
-		log.Fatalf("❌ Failed to get extraction timestamp: %v", err)
+		log.Fatalf("❌ Failed to get timestamp: %v", err)
 	}
-	safeTimestamp2 := date_time_functions.Safe_time_stamp(t2, 1)
-	extractDir := filepath.Join(baseDir, safeTimestamp2)
+	safeTS := date_time_functions.Safe_time_stamp(rawTS, 1)
+	extractDir := filepath.Join(baseDir, safeTS)
 
-	// Extract ZIP
-	log.Printf("📂 Extracting to: %s", extractDir)
-	if err := system_management_functions.Extract_zip(zipPath, extractDir); err != nil {
+	// Extract ZIP to timestamped folder
+	log.Printf("📦 Extracting to: %s", extractDir)
+	if err := system_management_functions.Extract_zip(downloadPath, extractDir); err != nil {
 		log.Fatalf("❌ Extraction failed: %v", err)
 	}
 	log.Println("✅ Extraction complete.")
 
 	// Path to sqldeveloper.exe
-	finalExe := filepath.Join(extractDir, "sqldeveloper", "sqldeveloper.exe")
-	log.Printf("🚀 SQL Developer located at: %s", finalExe)
-
-	// Create desktop shortcut (maximized, all users)
-	if err := system_management_functions.Create_desktop_shortcut(
-		finalExe,
-		"SQL Developer.lnk",
-		"Launch Oracle SQL Developer",
-		3,    // WindowStyle 3 = Maximized
-		true, // All users
-	); err != nil {
-		log.Fatalf("❌ Failed to create desktop shortcut: %v", err)
+	exePath := filepath.Join(extractDir, "sqldeveloper", "sqldeveloper.exe")
+	if _, err := os.Stat(exePath); err != nil {
+		log.Fatalf("❌ Could not find sqldeveloper.exe: %v", err)
 	}
-	log.Println("📎 Desktop shortcut created successfully (maximized).")
+
+	// Create shortcut
+	log.Println("🔗 Creating desktop shortcut...")
+	err = system_management_functions.Create_desktop_shortcut(
+		exePath,
+		"SQL Developer.lnk",
+		"Oracle SQL Developer",
+		3, // 3 = Maximized window
+		false, // current user only
+	)
+	if err != nil {
+		log.Fatalf("❌ Failed to create shortcut: %v", err)
+	}
+
+	log.Println("✅ Shortcut created.")
 }
