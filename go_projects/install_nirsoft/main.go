@@ -11,7 +11,7 @@ import (
 
 func main() {
 	// Constants
-	downloadURL := "https://github.com/PeterCullenBurbery/configuration-003/raw/main/nirsoft_package_enc_1.30.19.zip"
+	downloadURL := "https://raw.githubusercontent.com/PeterCullenBurbery/Nirsoft/main/nirsoft_package_enc_1.30.19.zip"
 	baseDir := `C:\downloads\nirsoft`
 	password := "nirsoft9876$"
 
