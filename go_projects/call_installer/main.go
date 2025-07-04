@@ -21,6 +21,7 @@ func main() {
 	installPackagesExe := filepath.Join(baseDir, "go_projects", "install_packages", "install_packages.exe")
 	installCherryTreeExe := filepath.Join(baseDir, "go_projects", "install_cherry_tree", "install_cherry_tree.exe")
 	installMinicondaExe := filepath.Join(baseDir, "go_projects", "install_miniconda", "install_miniconda.exe")
+	installSQLDeveloperExe := filepath.Join(baseDir, "go_projects", "install_sql_developer", "install_sql_developer.exe")
 
 	// Check if what-to-install.yaml exists
 	if _, err := os.Stat(yamlPath); err != nil {
@@ -65,4 +66,17 @@ func main() {
 		log.Fatalf("❌ install_miniconda.exe failed: %v", err)
 	}
 	log.Println("✅ Miniconda installation completed.")
+
+	// === Run install_sql_developer.exe ===
+	if _, err := os.Stat(installSQLDeveloperExe); err != nil {
+		log.Fatalf("❌ Could not find install_sql_developer.exe at: %s\n%v", installSQLDeveloperExe, err)
+	}
+	log.Printf("🧠 Running: %s\n", installSQLDeveloperExe)
+	cmd4 := exec.Command(installSQLDeveloperExe)
+	cmd4.Stdout = os.Stdout
+	cmd4.Stderr = os.Stderr
+	if err := cmd4.Run(); err != nil {
+		log.Fatalf("❌ install_sql_developer.exe failed: %v", err)
+	}
+	log.Println("✅ SQL Developer installation completed.")
 }
