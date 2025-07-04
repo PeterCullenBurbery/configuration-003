@@ -1,0 +1,13 @@
+what to install:
+  winget:
+    - Microsoft.PowerShell # Powershell 7
+    - Microsoft.VisualStudioCode # Vs code
+    - 7zip.7zip # 7zip
+    - voidtools.Everything # Voidtools everything
+    - WinSCP.WinSCP # WinSCP
+  choco:
+    - mobaxterm # MobaXTerm
+    - golang # Go
+    - notepadplusplus # Notepad++
+    - sqlitebrowser # SQLite Browser
+    - temurin21 # Java
