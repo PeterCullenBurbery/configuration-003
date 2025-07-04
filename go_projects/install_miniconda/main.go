@@ -44,4 +44,18 @@ func main() {
 	}
 
 	log.Println("✅ Miniconda installation completed.")
+
+	// Add Miniconda and Scripts folder to PATH
+	if err := system_management_functions.Add_to_path(filepath.Join(installDir)); err != nil {
+		log.Printf("⚠️ Failed to add %s to PATH: %v", installDir, err)
+	} else {
+		log.Printf("✅ Added %s to system PATH.", installDir)
+	}
+
+	scriptsPath := filepath.Join(installDir, "Scripts")
+	if err := system_management_functions.Add_to_path(scriptsPath); err != nil {
+		log.Printf("⚠️ Failed to add %s to PATH: %v", scriptsPath, err)
+	} else {
+		log.Printf("✅ Added %s to system PATH.", scriptsPath)
+	}
 }
