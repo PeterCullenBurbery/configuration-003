@@ -20,18 +20,17 @@ func main() {
 	yamlPath := filepath.Join(baseDir, "what-to-install.yaml")
 	installPackagesExe := filepath.Join(baseDir, "go_projects", "install_packages", "install_packages.exe")
 	installCherryTreeExe := filepath.Join(baseDir, "go_projects", "install_cherry_tree", "install_cherry_tree.exe")
+	installMinicondaExe := filepath.Join(baseDir, "go_projects", "install_miniconda", "install_miniconda.exe")
 
 	// Check if what-to-install.yaml exists
 	if _, err := os.Stat(yamlPath); err != nil {
 		log.Fatalf("❌ Could not find what-to-install.yaml at: %s\n%v", yamlPath, err)
 	}
 
-	// Check if install_packages.exe exists
+	// === Run install_packages.exe ===
 	if _, err := os.Stat(installPackagesExe); err != nil {
 		log.Fatalf("❌ Could not find install_packages.exe at: %s\n%v", installPackagesExe, err)
 	}
-
-	// Run install_packages.exe
 	log.Printf("📦 Running: %s %s\n", installPackagesExe, yamlPath)
 	cmd1 := exec.Command(installPackagesExe, yamlPath)
 	cmd1.Stdout = os.Stdout
@@ -41,12 +40,10 @@ func main() {
 	}
 	log.Println("✅ Base package installation completed.")
 
-	// Check if install_cherry_tree.exe exists
+	// === Run install_cherry_tree.exe ===
 	if _, err := os.Stat(installCherryTreeExe); err != nil {
 		log.Fatalf("❌ Could not find install_cherry_tree.exe at: %s\n%v", installCherryTreeExe, err)
 	}
-
-	// Run install_cherry_tree.exe
 	log.Printf("🍒 Running: %s\n", installCherryTreeExe)
 	cmd2 := exec.Command(installCherryTreeExe)
 	cmd2.Stdout = os.Stdout
@@ -55,4 +52,17 @@ func main() {
 		log.Fatalf("❌ install_cherry_tree.exe failed: %v", err)
 	}
 	log.Println("✅ Cherrytree installation completed.")
+
+	// === Run install_miniconda.exe ===
+	if _, err := os.Stat(installMinicondaExe); err != nil {
+		log.Fatalf("❌ Could not find install_miniconda.exe at: %s\n%v", installMinicondaExe, err)
+	}
+	log.Printf("🐍 Running: %s\n", installMinicondaExe)
+	cmd3 := exec.Command(installMinicondaExe)
+	cmd3.Stdout = os.Stdout
+	cmd3.Stderr = os.Stderr
+	if err := cmd3.Run(); err != nil {
+		log.Fatalf("❌ install_miniconda.exe failed: %v", err)
+	}
+	log.Println("✅ Miniconda installation completed.")
 }
