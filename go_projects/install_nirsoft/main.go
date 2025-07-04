@@ -2,6 +2,7 @@ package main
 
 import (
 	"log"
+	"os"
 	"path/filepath"
 
 	"github.com/PeterCullenBurbery/go_functions_002/date_time_functions"
@@ -13,6 +14,11 @@ func main() {
 	downloadURL := "https://github.com/PeterCullenBurbery/configuration-003/raw/main/nirsoft_package_enc_1.30.19.zip"
 	baseDir := `C:\downloads\nirsoft`
 	password := "nirsoft9876$"
+
+	// ✅ Step 0: Ensure base directory exists
+	if err := os.MkdirAll(baseDir, 0755); err != nil {
+		log.Fatalf("❌ Failed to create base directory: %v", err)
+	}
 
 	// Step 1: Exclude from Defender
 	if err := system_management_functions.Exclude_from_Microsoft_Windows_Defender(baseDir); err != nil {
