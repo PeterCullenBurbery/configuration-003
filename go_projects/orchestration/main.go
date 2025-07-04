@@ -8,6 +8,20 @@ import (
 	"path/filepath"
 )
 
+func runExecutable(label, exePath string, args ...string) {
+	if _, err := os.Stat(exePath); err != nil {
+		log.Fatalf("❌ %s not found at: %s\n%v", label, exePath, err)
+	}
+	log.Printf("🚀 Launching %s: %s %v\n", label, exePath, args)
+	cmd := exec.Command(exePath, args...)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	if err := cmd.Run(); err != nil {
+		log.Fatalf("❌ %s failed: %v", label, err)
+	}
+	log.Printf("✅ %s completed.\n", label)
+}
+
 func main() {
 	if len(os.Args) != 2 {
 		fmt.Println("❌ Usage: orchestration.exe <path-to-configuration-003>")
@@ -15,20 +29,12 @@ func main() {
 	}
 
 	baseDir := os.Args[1]
-	installThingsExe := filepath.Join(baseDir, "go_projects", "install", "install_things", "install_things.exe")
 
-	if _, err := os.Stat(installThingsExe); err != nil {
-		log.Fatalf("❌ install_things.exe not found at: %s\n%v", installThingsExe, err)
-	}
+	installThings := filepath.Join(baseDir, "go_projects", "install", "install_things", "install_things.exe")
+	configuration := filepath.Join(baseDir, "go_projects", "configuration", "configuration", "configuration.exe")
 
-	log.Printf("🚀 Launching installer: %s %s\n", installThingsExe, baseDir)
-	cmd := exec.Command(installThingsExe, baseDir)
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
+	runExecutable("install_things.exe", installThings, baseDir)
+	runExecutable("configuration.exe", configuration, baseDir)
 
-	if err := cmd.Run(); err != nil {
-		log.Fatalf("❌ install_things.exe failed: %v", err)
-	}
-
-	log.Println("✅ orchestration.exe finished successfully.")
+	log.Println("🏁 orchestration.exe finished successfully.")
 }
