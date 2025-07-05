@@ -1,3 +1,6 @@
+// To open VS code keyboard shortcuts manually, run:
+// code $env:appdata\Code\User\keybindings.json
+
 package main
 
 import (
@@ -19,11 +22,13 @@ func main() {
 		fmt.Println("❌ APPDATA environment variable not set.")
 		return
 	}
-
+	// 💡 You can open keyboard shortcuts with:
+	// code $env:appdata\Code\User\keybindings.json
 	keybindings_path := filepath.Join(app_data, "Code", "User", "keybindings.json")
 
 	var existing_bindings []keybinding
 
+	// Check if file exists
 	if _, err := os.Stat(keybindings_path); err == nil {
 		data, err := os.ReadFile(keybindings_path)
 		if err == nil && len(data) > 0 {
@@ -33,17 +38,20 @@ func main() {
 			}
 		}
 	} else if os.IsNotExist(err) {
+		// File doesn't exist: ensure parent folder exists
 		dir := filepath.Dir(keybindings_path)
 		if err := os.MkdirAll(dir, 0o755); err != nil {
 			fmt.Printf("❌ Failed to create directory %s: %v\n", dir, err)
 			return
 		}
+		// Continue with empty keybindings list
 		fmt.Println("ℹ️ keybindings.json does not exist, creating a new one.")
 	} else {
 		fmt.Printf("❌ Failed to stat keybindings.json: %v\n", err)
 		return
 	}
 
+	// Desired keybindings
 	new_bindings := []keybinding{
 		{
 			Key:     "ctrl+a",
@@ -57,6 +65,7 @@ func main() {
 		},
 	}
 
+	// Only add new bindings if not already present
 	for _, new_b := range new_bindings {
 		found := false
 		for _, existing_b := range existing_bindings {
@@ -70,6 +79,7 @@ func main() {
 		}
 	}
 
+	// Write updated list
 	output, err := json.MarshalIndent(existing_bindings, "", "    ")
 	if err != nil {
 		fmt.Printf("❌ Failed to marshal keybindings: %v\n", err)

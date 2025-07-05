@@ -1,3 +1,6 @@
+// To see VS Code settings, use:
+// PowerShell: code $env:APPDATA\Code\User\settings.json
+
 package main
 
 import (
@@ -11,17 +14,19 @@ import (
 )
 
 func main() {
+	// Get VS Code settings.json path
 	path, err := get_settings_path()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "error: %v\n", err)
 		os.Exit(1)
 	}
 
+	// Read existing settings.json if present
 	var config map[string]interface{}
 	data, err := os.ReadFile(path)
 	if err != nil {
 		if errors.Is(err, fs.ErrNotExist) {
-			config = make(map[string]interface{})
+			config = make(map[string]interface{}) // No file, start fresh
 		} else {
 			fmt.Fprintf(os.Stderr, "failed to read settings.json: %v\n", err)
 			os.Exit(1)
@@ -33,18 +38,21 @@ func main() {
 		}
 	}
 
+	// Backup original if it existed
 	if data != nil {
 		if err := make_backup(path, data); err != nil {
 			fmt.Fprintf(os.Stderr, "warning: failed to backup original settings.json: %v\n", err)
 		}
 	}
 
+	// Get full Desktop path (e.g., C:\Users\peter\Desktop)
 	desktop_path, err := get_resolved_desktop_path()
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "failed to determine desktop path: %v\n", err)
 		os.Exit(1)
 	}
 
+	// Desired settings to insert/overwrite
 	config["files.autoSave"] = "afterDelay"
 	config["powershell.cwd"] = desktop_path
 	config["terminal.integrated.cwd"] = desktop_path
@@ -58,24 +66,28 @@ func main() {
 	config["redhat.telemetry.enabled"] = true
 	config["editor.renderWhitespace"] = "all"
 
+	// YAML-specific editor settings
 	config["[yaml]"] = map[string]interface{}{
 		"editor.insertSpaces":      true,
 		"editor.tabSize":           2,
 		"editor.detectIndentation": false,
 	}
 
+	// Marshal JSON with indentation
 	output, err := json.MarshalIndent(config, "", "    ")
 	if err != nil {
 		fmt.Fprintf(os.Stderr, "failed to marshal merged JSON: %v\n", err)
 		os.Exit(1)
 	}
 
+	// Ensure directory exists
 	dir := filepath.Dir(path)
 	if err := os.MkdirAll(dir, 0o755); err != nil {
 		fmt.Fprintf(os.Stderr, "failed to create directory %q: %v\n", dir, err)
 		os.Exit(1)
 	}
 
+	// Atomic write: temp file -> rename
 	tmp_path := path + ".tmp"
 	if err := os.WriteFile(tmp_path, output, 0o644); err != nil {
 		fmt.Fprintf(os.Stderr, "failed to write temp settings.json: %v\n", err)
