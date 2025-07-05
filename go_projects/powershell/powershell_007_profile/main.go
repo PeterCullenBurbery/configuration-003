@@ -46,7 +46,7 @@ function prompt {
     return "$PWD> "
 }
 
-# --- Begin MyModule Logging Block PS7 ---
+# --- Begin MyModule Logging Block PS-007 ---
 # --- Build Timestamp Filename ---
 
 $now = Get-Date
@@ -71,7 +71,7 @@ try {
 } catch {
     Write-Host "Transcript already running or failed to start."
 }
-# --- End MyModule Logging Block PS007 ---
+# --- End MyModule Logging Block PS-007 ---
 
 # Import the Chocolatey Profile that enables tab-completion for 'choco'
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
