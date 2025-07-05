@@ -28,7 +28,7 @@ func main() {
 	// PowerShell 7 profile content
 	content := `# This is a comment
 
-Import-Module MyModule
+Import-Module C:\powershell-modules\MyModule\MyModule.psm1
 
 function prompt {
     $now = Get-Date
