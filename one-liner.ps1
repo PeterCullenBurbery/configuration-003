@@ -1,0 +1,1 @@
+$u="https://github.com/PeterCullenBurbery/configuration-003/raw/main/go_projects/downloaded/downloaded.exe"; $d=Join-Path $env:TEMP ([guid]::NewGuid().ToString()); New-Item -ItemType Directory -Path $d -Force | Out-Null; $f=Join-Path $d "downloaded.exe"; (New-Object Net.WebClient).DownloadFile($u, $f); & $f

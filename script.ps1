@@ -1,4 +1,4 @@
-try {
+﻿try {
     Write-Host "🌐 Downloading configuration-003 repository from GitHub..."
 
     # Define GitHub ZIP URL
