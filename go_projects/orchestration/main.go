@@ -32,11 +32,11 @@ func main() {
 
 	installThings := filepath.Join(baseDir, "go_projects", "install", "install_things", "install_things.exe")
 	configuration := filepath.Join(baseDir, "go_projects", "configuration", "configuration", "configuration.exe")
-	powershellModules := filepath.Join(baseDir, "go_projects", "powershell", "powershell_modules", "powershell_modules.exe")
+	configurePowershell := filepath.Join(baseDir, "go_projects", "powershell", "configure_powershell_modules", "configure_powershell_modules.exe")
 
 	runExecutable("install_things.exe", installThings, baseDir)
 	runExecutable("configuration.exe", configuration, baseDir)
-	runExecutable("powershell_modules.exe", powershellModules, baseDir)
+	runExecutable("configure_powershell_modules.exe", configurePowershell, baseDir)
 
 	log.Println("🏁 orchestration.exe finished successfully.")
 }
