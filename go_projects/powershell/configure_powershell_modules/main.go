@@ -22,17 +22,6 @@ func runExecutable(label, exePath string, args ...string) {
 	log.Printf("✅ %s completed.\n", label)
 }
 
-func restartExplorer() {
-	log.Println("🔄 Restarting Explorer...")
-	if err := exec.Command("taskkill", "/f", "/im", "explorer.exe").Run(); err != nil {
-		log.Fatalf("❌ Failed to stop Explorer: %v", err)
-	}
-	if err := exec.Command("explorer.exe").Start(); err != nil {
-		log.Fatalf("❌ Failed to restart Explorer: %v", err)
-	}
-	log.Println("✅ Explorer restarted successfully.")
-}
-
 func main() {
 	if len(os.Args) != 2 {
 		fmt.Println("❌ Usage: configure_powershell_profiles.exe <path-to-configuration-003>")
@@ -45,8 +34,6 @@ func main() {
 	runExecutable("powershell_modules.exe", filepath.Join(psPath, "powershell_modules", "powershell_modules.exe"), baseDir)
 	runExecutable("powershell_005_profile.exe", filepath.Join(psPath, "powershell_005_profile", "powershell_005_profile.exe"), baseDir)
 	runExecutable("powershell_007_profile.exe", filepath.Join(psPath, "powershell_007_profile", "powershell_007_profile.exe"), baseDir)
-
-	restartExplorer()
 
 	log.Println("🏁 PowerShell profile configuration completed.")
 }
