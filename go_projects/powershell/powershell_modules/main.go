@@ -37,4 +37,12 @@ func main() {
 
 		fmt.Printf("✅ Downloaded %s to %s\n", filename, dest_path)
 	}
+
+	// Add to PSModulePath using the .psm1 file path
+	psm1_path := filepath.Join(module_dir, "MyModule.psm1")
+	if err := system_management_functions.Add_to_ps_module_path(psm1_path); err != nil {
+		fmt.Printf("❌ Failed to add to PSModulePath: %v\n", err)
+	} else {
+		fmt.Printf("✅ Successfully added to PSModulePath: %s\n", psm1_path)
+	}
 }
