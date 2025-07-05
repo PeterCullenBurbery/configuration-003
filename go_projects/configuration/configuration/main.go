@@ -75,4 +75,18 @@ func main() {
 	runSteps(baseDir, "explorer", explorerSteps)
 	runSteps(baseDir, "date-time", dateTimeSteps)
 	runSteps(baseDir, "apps", appsSteps)
+
+	// 🛡️ Run SSH setup
+	sshPath := filepath.Join(baseDir, "go_projects", "configuration", "ssh", "ssh.exe")
+	if _, err := os.Stat(sshPath); err != nil {
+		log.Fatalf("❌ Could not find ssh.exe at: %s\n%v", sshPath, err)
+	}
+	log.Printf("🛡️ Running SSH setup: %s\n", sshPath)
+	cmd := exec.Command(sshPath)
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	if err := cmd.Run(); err != nil {
+		log.Fatalf("❌ ssh.exe failed: %v", err)
+	}
+	log.Println("✅ SSH setup completed.")
 }
