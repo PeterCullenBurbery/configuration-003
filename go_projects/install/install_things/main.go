@@ -26,10 +26,10 @@ func main() {
 		args    []string
 	}{
 		{"📦 install_packages", "install_packages.exe", []string{yamlPath}},
-		{"🍒 install_cherry_tree", "install_cherry_tree.exe", nil},
-		{"🐍 install_miniconda", "install_miniconda.exe", nil},
-		{"🧠 install_sql_developer", "install_sql_developer.exe", nil},
-		{"🧰 install_nirsoft", "install_nirsoft.exe", nil},
+		// {"🍒 install_cherry_tree", "install_cherry_tree.exe", nil},
+		// {"🐍 install_miniconda", "install_miniconda.exe", nil},
+		// {"🧠 install_sql_developer", "install_sql_developer.exe", nil},
+		// {"🧰 install_nirsoft", "install_nirsoft.exe", nil},
 	}
 
 	for _, step := range installSteps {
