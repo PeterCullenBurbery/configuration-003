@@ -64,3 +64,34 @@ function Get-IsoOrdinalDate {
         Write-Output $ordinal
     }
 }
+
+function Restart-FileExplorer {
+    <#
+    .SYNOPSIS
+    Restarts Windows File Explorer.
+
+    .DESCRIPTION
+    Stops the 'explorer' process and starts it again. This will close and reopen the desktop, taskbar, and any open File Explorer windows.
+
+    .EXAMPLE
+    Restart-FileExplorer
+
+    Restarts the File Explorer process.
+    #>
+
+    [CmdletBinding()]
+    param ()
+
+    try {
+        Write-Host "🔄 Stopping Explorer..." -ForegroundColor Yellow
+        Stop-Process -Name explorer -Force -ErrorAction Stop
+        Start-Sleep -Seconds 1
+
+        Write-Host "🚀 Starting Explorer..." -ForegroundColor Green
+        Start-Process explorer.exe
+        Write-Host "✅ Explorer restarted successfully." -ForegroundColor Cyan
+    }
+    catch {
+        Write-Host "❌ Failed to restart Explorer: $_" -ForegroundColor Red
+    }
+}
