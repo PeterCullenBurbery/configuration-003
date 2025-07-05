@@ -9,7 +9,7 @@ import (
 )
 
 func main() {
-	module_dir := filepath.Join("C:", "powershell-modules", "MyModule")
+	module_dir := `C:\powershell-modules\MyModule`
 
 	// Ensure target directory exists
 	if err := os.MkdirAll(module_dir, 0755); err != nil {
