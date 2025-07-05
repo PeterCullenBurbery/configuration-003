@@ -63,6 +63,16 @@ func main() {
 		{"📅 Set_first_day_of_week_Monday", "Set_first_day_of_week_Monday.exe"},
 	}
 
+	appsSteps := []struct {
+		label   string
+		exeName string
+	}{
+		{"🛠️ configure_keyboard_shortcuts_for_vs_code", "configure_keyboard_shortcuts_for_vs_code.exe"},
+		{"⚙️ configure_settings_for_vs_code", "configure_settings_for_vs_code.exe"},
+		{"🪟 configure_settings_for_windows_terminal", "configure_settings_for_windows_terminal.exe"},
+	}
+
 	runSteps(baseDir, "explorer", explorerSteps)
 	runSteps(baseDir, "date-time", dateTimeSteps)
+	runSteps(baseDir, "apps", appsSteps)
 }
