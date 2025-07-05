@@ -64,19 +64,3 @@ function Get-IsoOrdinalDate {
         Write-Output $ordinal
     }
 }
-
-function prompt {
-    $now = Get-Date
-
-    # Use high-precision timestamp (7 fractional digits)
-    $timestamp = $now.ToString("yyyy-0MM-0dd 0HH.0mm.0ss.fffffff")
-
-    $iana_tz = Get-IanaTimeZone
-    $iso_week_date = Get-IsoWeekDate -date $now
-    $iso_ordinal_date = Get-IsoOrdinalDate -date $now
-
-    # Print formatted info to screen (timestamp + tz + ISO week + ordinal)
-    Write-Host "$timestamp $iana_tz $iso_week_date $iso_ordinal_date" -ForegroundColor Green
-
-    return "$PWD> "
-}
