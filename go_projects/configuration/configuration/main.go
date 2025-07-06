@@ -70,6 +70,7 @@ func main() {
 		{"🛠️ configure_keyboard_shortcuts_for_vs_code", "configure_keyboard_shortcuts_for_vs_code.exe"},
 		{"⚙️ configure_settings_for_vs_code", "configure_settings_for_vs_code.exe"},
 		{"🪟 configure_settings_for_windows_terminal", "configure_settings_for_windows_terminal.exe"},
+		{"🧩 install_vs_code_extensions", "install_vs_code_extensions.exe"},
 	}
 
 	runSteps(baseDir, "explorer", explorerSteps)
