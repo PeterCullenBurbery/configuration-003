@@ -4,10 +4,10 @@ what to install:
     - Microsoft.VisualStudioCode # Vs code
     - 7zip.7zip # 7zip
     - voidtools.Everything # Voidtools everything
-    # - WinSCP.WinSCP # WinSCP
+    - WinSCP.WinSCP # WinSCP
   choco:
-    # - mobaxterm # MobaXTerm
-    # - golang # Go
+    - mobaxterm # MobaXTerm
+    - golang # Go
     - notepadplusplus # Notepad++
-    # - sqlitebrowser # SQLite Browser
-    # - temurin21 # Java
+    - sqlitebrowser # SQLite Browser
+    - temurin21 # Java
