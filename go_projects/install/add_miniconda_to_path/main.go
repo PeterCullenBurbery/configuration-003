@@ -7,9 +7,13 @@ import (
 	"github.com/PeterCullenBurbery/go_functions_002/v3/system_management_functions"
 )
 
+
+
 func main() {
 	minicondaDir := `C:\ProgramData\Miniconda3`
 	scriptsDir := `C:\ProgramData\Miniconda3\Scripts`
+
+
 
 	// Add Miniconda root
 	fmt.Printf("➕ Adding %s to system PATH...\n", minicondaDir)
