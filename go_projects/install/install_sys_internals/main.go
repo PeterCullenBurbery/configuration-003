@@ -102,21 +102,26 @@ func accept_all_sysinternals_eulas() error {
 }
 
 func copy_sysinternals_binaries(extract_dir string) error {
-	rename_map := map[string]string{
-		"procexp.exe":   "process_explorer.exe",
-		"procexp64.exe": "process_explorer64.exe",
-		"procmon.exe":   "process_monitor.exe",
-		"procmon64.exe": "process_monitor64.exe",
+	copy_map := map[string][]string{
+		"procexp64.exe": {
+			"process_explorer.exe",
+			"process_explorer64.exe",
+		},
+		"procmon64.exe": {
+			"process_monitor.exe",
+			"process_monitor64.exe",
+		},
 	}
 
-	for old_name, new_name := range rename_map {
-		old_path := filepath.Join(extract_dir, old_name)
-		new_path := filepath.Join(extract_dir, new_name)
+	for source, destinations := range copy_map {
+		source_path := filepath.Join(extract_dir, source)
+		for _, dest := range destinations {
+			dest_path := filepath.Join(extract_dir, dest)
 
-		log.Printf("📁 Copying %s → %s", old_name, new_name)
-
-		if err := copy_file(old_path, new_path); err != nil {
-			return fmt.Errorf("failed to copy %s to %s: %w", old_name, new_name, err)
+			log.Printf("📁 Copying %s → %s", source, dest)
+			if err := copy_file(source_path, dest_path); err != nil {
+				return fmt.Errorf("failed to copy %s to %s: %w", source, dest, err)
+			}
 		}
 	}
 	return nil
