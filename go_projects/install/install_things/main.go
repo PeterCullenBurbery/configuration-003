@@ -31,7 +31,8 @@ func main() {
 		// {"🐍 install_miniconda", "install_miniconda.exe", nil},
 		// {"🧠 install_sql_developer", "install_sql_developer.exe", nil},
 		// {"🧰 install_nirsoft", "install_nirsoft.exe", nil},
-		// {"🔧 install_sys_internals", "install_sys_internals.exe", nil}, // ← new step
+		// {"🔧 install_sys_internals", "install_sys_internals.exe", nil},
+		{"📸 install_ShareX", "install_ShareX.exe", nil}, // ← new step
 	}
 
 	for _, step := range installSteps {
