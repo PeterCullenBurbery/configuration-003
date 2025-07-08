@@ -1,6 +1,8 @@
 package main
 
 import (
+	"fmt"
+	"io"
 	"log"
 	"os"
 	"path/filepath"
@@ -64,6 +66,12 @@ func main() {
 		log.Fatalf("❌ Failed to set EULAAccepted registry keys: %v", err)
 	}
 	log.Println("✅ EULA accepted for all Sysinternals tools")
+
+	// ✅ Step 7: Copy and rename key utilities
+	if err := copy_sysinternals_binaries(extract_dir); err != nil {
+		log.Fatalf("❌ Failed to copy/rename executables: %v", err)
+	}
+	log.Println("✅ Copied and renamed key Sysinternals executables")
 }
 
 func accept_all_sysinternals_eulas() error {
@@ -91,4 +99,42 @@ func accept_all_sysinternals_eulas() error {
 		registry_key.Close()
 	}
 	return nil
+}
+
+func copy_sysinternals_binaries(extract_dir string) error {
+	rename_map := map[string]string{
+		"procexp.exe":   "process_explorer.exe",
+		"procexp64.exe": "process_explorer64.exe",
+		"procmon.exe":   "process_monitor.exe",
+		"procmon64.exe": "process_monitor64.exe",
+	}
+
+	for old_name, new_name := range rename_map {
+		old_path := filepath.Join(extract_dir, old_name)
+		new_path := filepath.Join(extract_dir, new_name)
+
+		log.Printf("📁 Copying %s → %s", old_name, new_name)
+
+		if err := copy_file(old_path, new_path); err != nil {
+			return fmt.Errorf("failed to copy %s to %s: %w", old_name, new_name, err)
+		}
+	}
+	return nil
+}
+
+func copy_file(src_path, dst_path string) error {
+	src_file, err := os.Open(src_path)
+	if err != nil {
+		return err
+	}
+	defer src_file.Close()
+
+	dst_file, err := os.Create(dst_path)
+	if err != nil {
+		return err
+	}
+	defer dst_file.Close()
+
+	_, err = io.Copy(dst_file, src_file)
+	return err
 }
