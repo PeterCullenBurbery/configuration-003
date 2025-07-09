@@ -25,15 +25,23 @@
     }
 
     $repoPath = $unzippedRoot.FullName
-    $exePath = Join-Path $repoPath "go_projects\orchestration\orchestration.exe"
+    $orchestrationPath = Join-Path $repoPath "go_projects\orchestration\orchestration.exe"
+    $pinVsCodePath = Join-Path $repoPath "go_projects\configuration\apps\pin_vs_code_to_taskbar\pin_vs_code_to_taskbar.exe"
 
-    if (-not (Test-Path $exePath)) {
-        throw "❌ orchestration.exe not found at expected location: $exePath"
+    if (-not (Test-Path $orchestrationPath)) {
+        throw "❌ orchestration.exe not found at expected location: $orchestrationPath"
     }
 
     Write-Host "🚀 Running orchestration.exe with repository path:"
     Write-Host "    $repoPath"
-    & $exePath $repoPath
+    & $orchestrationPath $repoPath
+
+    if (-not (Test-Path $pinVsCodePath)) {
+        throw "❌ pin_vs_code_to_taskbar.exe not found at expected location: $pinVsCodePath"
+    }
+
+    Write-Host "📌 Running pin_vs_code_to_taskbar.exe..."
+    & $pinVsCodePath
 
 } catch {
     Write-Error "❌ Script failed: $_"
