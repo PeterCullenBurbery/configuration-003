@@ -70,6 +70,7 @@ func main() {
 		{"🛠️ configure_keyboard_shortcuts_for_vs_code", "configure_keyboard_shortcuts_for_vs_code.exe"},
 		{"⚙️ configure_settings_for_vs_code", "configure_settings_for_vs_code.exe"},
 		{"🪟 configure_settings_for_windows_terminal", "configure_settings_for_windows_terminal.exe"},
+		{"📌 pin_vs_code_to_taskbar", "pin_vs_code_to_taskbar.exe"},
 	}
 
 	run_steps(base_dir, "explorer", explorer_steps)
