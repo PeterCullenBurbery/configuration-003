@@ -8,12 +8,12 @@ import (
 	"path/filepath"
 )
 
-func runExecutable(label, exePath string, args ...string) {
-	if _, err := os.Stat(exePath); err != nil {
-		log.Fatalf("❌ %s not found at: %s\n%v", label, exePath, err)
+func run_executable(label, exe_path string, args ...string) {
+	if _, err := os.Stat(exe_path); err != nil {
+		log.Fatalf("❌ %s not found at: %s\n%v", label, exe_path, err)
 	}
-	log.Printf("🚀 Launching %s: %s %v\n", label, exePath, args)
-	cmd := exec.Command(exePath, args...)
+	log.Printf("🚀 Launching %s: %s %v\n", label, exe_path, args)
+	cmd := exec.Command(exe_path, args...)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	if err := cmd.Run(); err != nil {
@@ -28,12 +28,15 @@ func main() {
 		os.Exit(1)
 	}
 
-	baseDir := os.Args[1]
-	psPath := filepath.Join(baseDir, "go_projects", "powershell")
+	base_dir := os.Args[1]
+	powershell_path := filepath.Join(base_dir, "go_projects", "powershell")
 
-	runExecutable("powershell_modules.exe", filepath.Join(psPath, "powershell_modules", "powershell_modules.exe"), baseDir)
-	runExecutable("powershell_005_profile.exe", filepath.Join(psPath, "powershell_005_profile", "powershell_005_profile.exe"), baseDir)
-	runExecutable("powershell_007_profile.exe", filepath.Join(psPath, "powershell_007_profile", "powershell_007_profile.exe"), baseDir)
+	run_executable("powershell_modules.exe", filepath.Join(powershell_path, "powershell_modules", "powershell_modules.exe"), base_dir)
+
+	run_executable("ip_address.exe", filepath.Join(powershell_path, "IP_address", "IP_address.exe"), base_dir)
+
+	run_executable("powershell_005_profile.exe", filepath.Join(powershell_path, "powershell_005_profile", "powershell_005_profile.exe"), base_dir)
+	run_executable("powershell_007_profile.exe", filepath.Join(powershell_path, "powershell_007_profile", "powershell_007_profile.exe"), base_dir)
 
 	log.Println("🏁 PowerShell profile configuration completed.")
 }
