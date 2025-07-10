@@ -5,7 +5,7 @@ what to install:
     - 7zip.7zip # 7zip
     - voidtools.Everything # Voidtools everything
     # - WinSCP.WinSCP # WinSCP
-    - ApacheFriends.Xampp.8.2 # XAMPP
+    # - ApacheFriends.Xampp.8.2 # XAMPP
   choco:
     # - mobaxterm # MobaXTerm
     # - golang # Go
