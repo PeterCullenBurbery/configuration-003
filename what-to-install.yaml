@@ -1,14 +1,14 @@
 what to install:
   winget:
-    - Microsoft.PowerShell # Powershell 7
+    # - Microsoft.PowerShell # Powershell 7
     - Microsoft.VisualStudioCode # Vs code
-    - 7zip.7zip # 7zip
-    - voidtools.Everything # Voidtools everything
+    # - 7zip.7zip # 7zip
+    # - voidtools.Everything # Voidtools everything
     # - WinSCP.WinSCP # WinSCP
     # - ApacheFriends.Xampp.8.2 # XAMPP
   choco:
     # - mobaxterm # MobaXTerm
     # - golang # Go
-    - notepadplusplus # Notepad++
+    # - notepadplusplus # Notepad++
     # - sqlitebrowser # SQLite Browser
     # - temurin21 # Java
