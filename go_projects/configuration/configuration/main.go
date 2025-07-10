@@ -73,9 +73,18 @@ func main() {
 		{"📌 set_windows_terminal_default_terminal_application", "set_windows_terminal_default_terminal_application.exe"},
 	}
 
+	ssh_steps := []struct {
+		label    string
+		exe_name string
+	}{
+		{"🔐 ssh", "ssh.exe"},
+		{"📡 powershell_remoting", "powershell_remoting.exe"},
+	}
+
 	run_steps(base_dir, "explorer", explorer_steps)
 	run_steps(base_dir, "date-time", date_time_steps)
 	run_steps(base_dir, "apps", apps_steps)
+	run_steps(base_dir, "ssh_and_remote_access", ssh_steps)
 
 	// // 🧩 Run install_vs_code_extensions.exe with path to vs-code-extensions.yaml
 	// vs_code_yaml := filepath.Join(base_dir, "vs-code-extensions.yaml")
@@ -96,18 +105,4 @@ func main() {
 	// 	log.Fatalf("❌ install_vs_code_extensions.exe failed: %v", err)
 	// }
 	// log.Println("✅ VS Code extensions installed.")
-
-	// 🛡️ Run SSH setup
-	ssh_exe := filepath.Join(base_dir, "go_projects", "configuration", "ssh", "ssh.exe")
-	if _, err := os.Stat(ssh_exe); err != nil {
-		log.Fatalf("❌ Could not find ssh.exe at: %s\n%v", ssh_exe, err)
-	}
-	log.Printf("🛡️ Running SSH setup: %s\n", ssh_exe)
-	cmd_ssh := exec.Command(ssh_exe)
-	cmd_ssh.Stdout = os.Stdout
-	cmd_ssh.Stderr = os.Stderr
-	if err := cmd_ssh.Run(); err != nil {
-		log.Fatalf("❌ ssh.exe failed: %v", err)
-	}
-	log.Println("✅ SSH setup completed.")
 }
