@@ -33,7 +33,7 @@ func main() {
 
 	runExecutable("powershell_modules.exe", filepath.Join(psPath, "powershell_modules", "powershell_modules.exe"), baseDir)
 	runExecutable("powershell_005_profile.exe", filepath.Join(psPath, "powershell_005_profile", "powershell_005_profile.exe"), baseDir)
-	// runExecutable("powershell_007_profile.exe", filepath.Join(psPath, "powershell_007_profile", "powershell_007_profile.exe"), baseDir)
+	runExecutable("powershell_007_profile.exe", filepath.Join(psPath, "powershell_007_profile", "powershell_007_profile.exe"), baseDir)
 
 	log.Println("🏁 PowerShell profile configuration completed.")
 }

@@ -69,22 +69,22 @@ func main() {
 	}{
 		{"🛠️ configure_keyboard_shortcuts_for_vs_code", "configure_keyboard_shortcuts_for_vs_code.exe"},
 		{"⚙️ configure_settings_for_vs_code", "configure_settings_for_vs_code.exe"},
-		// {"🪟 configure_settings_for_windows_terminal", "configure_settings_for_windows_terminal.exe"},
+		{"🪟 configure_settings_for_windows_terminal", "configure_settings_for_windows_terminal.exe"},
 		{"📌 set_windows_terminal_default_terminal_application", "set_windows_terminal_default_terminal_application.exe"},
 	}
 
-	// ssh_steps := []struct {
-	// 	label    string
-	// 	exe_name string
-	// }{
-	// 	// {"🔐 ssh", "ssh.exe"},
-	// 	// {"📡 powershell_remoting", "powershell_remoting.exe"},
-	// }
+	ssh_steps := []struct {
+		label    string
+		exe_name string
+	}{
+		{"🔐 ssh", "ssh.exe"},
+		{"📡 powershell_remoting", "powershell_remoting.exe"},
+	}
 
 	run_steps(base_dir, "explorer", explorer_steps)
 	run_steps(base_dir, "date-time", date_time_steps)
 	run_steps(base_dir, "apps", apps_steps)
-	// run_steps(base_dir, "ssh_and_remote_access", ssh_steps)
+	run_steps(base_dir, "ssh_and_remote_access", ssh_steps)
 
 	// // 🧩 Run install_vs_code_extensions.exe with path to vs-code-extensions.yaml
 	// vs_code_yaml := filepath.Join(base_dir, "vs-code-extensions.yaml")
