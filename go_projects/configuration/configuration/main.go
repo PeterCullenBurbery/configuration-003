@@ -87,23 +87,23 @@ func main() {
 	run_steps(base_dir, "apps", apps_steps)
 	run_steps(base_dir, "ssh_and_remote_access", ssh_steps)
 
-	// // 🧩 Run install_vs_code_extensions.exe with path to vs-code-extensions.yaml
-	// vs_code_yaml := filepath.Join(base_dir, "vs-code-extensions.yaml")
-	// vs_code_ext_exe := filepath.Join(base_dir, "go_projects", "configuration", "apps", "install_vs_code_extensions", "install_vs_code_extensions.exe")
+	// 🧩 Run install_vs_code_extensions.exe with path to vs-code-extensions.yaml
+	vs_code_yaml := filepath.Join(base_dir, "vs-code-extensions.yaml")
+	vs_code_ext_exe := filepath.Join(base_dir, "go_projects", "configuration", "apps", "install_vs_code_extensions", "install_vs_code_extensions.exe")
 
-	// if _, err := os.Stat(vs_code_ext_exe); err != nil {
-	// 	log.Fatalf("❌ Could not find install_vs_code_extensions.exe at: %s\n%v", vs_code_ext_exe, err)
-	// }
-	// if _, err := os.Stat(vs_code_yaml); err != nil {
-	// 	log.Fatalf("❌ Could not find vs-code-extensions.yaml at: %s\n%v", vs_code_yaml, err)
-	// }
+	if _, err := os.Stat(vs_code_ext_exe); err != nil {
+		log.Fatalf("❌ Could not find install_vs_code_extensions.exe at: %s\n%v", vs_code_ext_exe, err)
+	}
+	if _, err := os.Stat(vs_code_yaml); err != nil {
+		log.Fatalf("❌ Could not find vs-code-extensions.yaml at: %s\n%v", vs_code_yaml, err)
+	}
 
-	// log.Printf("🧩 Installing VS Code extensions using: %s %s\n", vs_code_ext_exe, vs_code_yaml)
-	// cmd_vs_code := exec.Command(vs_code_ext_exe, vs_code_yaml)
-	// cmd_vs_code.Stdout = os.Stdout
-	// cmd_vs_code.Stderr = os.Stderr
-	// if err := cmd_vs_code.Run(); err != nil {
-	// 	log.Fatalf("❌ install_vs_code_extensions.exe failed: %v", err)
-	// }
-	// log.Println("✅ VS Code extensions installed.")
+	log.Printf("🧩 Installing VS Code extensions using: %s %s\n", vs_code_ext_exe, vs_code_yaml)
+	cmd_vs_code := exec.Command(vs_code_ext_exe, vs_code_yaml)
+	cmd_vs_code.Stdout = os.Stdout
+	cmd_vs_code.Stderr = os.Stderr
+	if err := cmd_vs_code.Run(); err != nil {
+		log.Fatalf("❌ install_vs_code_extensions.exe failed: %v", err)
+	}
+	log.Println("✅ VS Code extensions installed.")
 }
