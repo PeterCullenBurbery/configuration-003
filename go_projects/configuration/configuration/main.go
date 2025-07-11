@@ -71,6 +71,7 @@ func main() {
 		{"⚙️ configure_settings_for_vs_code", "configure_settings_for_vs_code.exe"},
 		{"🪟 configure_settings_for_windows_terminal", "configure_settings_for_windows_terminal.exe"},
 		{"📌 set_windows_terminal_default_terminal_application", "set_windows_terminal_default_terminal_application.exe"},
+		{"📍 pin_vs_code_to_taskbar", "pin_vs_code_to_taskbar.exe"},
 	}
 
 	ssh_steps := []struct {
