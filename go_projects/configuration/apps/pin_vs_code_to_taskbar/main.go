@@ -49,7 +49,7 @@ func main() {
 		vscode_path,
 		"VSCode.lnk",
 		"Visual Studio Code (Maximized)",
-		3,   // 3 = Maximized
+		3,    // 3 = Maximized
 		true, // true = all users
 	)
 	if err != nil {
@@ -68,4 +68,11 @@ func main() {
 		log.Fatalf("❌ Failed to pin shortcut to taskbar: %v", err)
 	}
 	fmt.Println("✅ VS Code shortcut (all users) pinned to taskbar.")
+
+	// Step 8: Restart File Explorer to reflect the taskbar pin visually
+	fmt.Println("🔁 Restarting File Explorer to reflect changes...")
+	if err := system_management_functions.Restart_file_explorer(); err != nil {
+		log.Fatalf("❌ Failed to restart Explorer: %v", err)
+	}
+	fmt.Println("✅ File Explorer restarted.")
 }
