@@ -36,7 +36,7 @@ func main() {
 	const config_path = `C:\ProgramData\ssh\sshd_config`
 	const powershell_subsystem = `Subsystem   powershell   "C:\Program Files\PowerShell\7\pwsh.exe" -sshs -NoLogo`
 
-	// Step 4: Check sshd_config for subsystem entry
+	// Step 4: Check sshd_config for subsystem entry and insertion point
 	fmt.Println("📂 Checking sshd_config for PowerShell SSH subsystem...")
 
 	file, err := os.Open(config_path)
@@ -48,12 +48,21 @@ func main() {
 
 	var lines []string
 	found := false
+	insertIndex := -1
+
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		line := scanner.Text()
+		trimmed := strings.TrimSpace(line)
 		lines = append(lines, line)
-		if strings.Contains(line, "Subsystem") && strings.Contains(line, "powershell") {
+
+		if strings.Contains(trimmed, "Subsystem") && strings.Contains(trimmed, "powershell") {
 			found = true
+		}
+
+		// Find first suitable insertion point (before AllowGroups or Match block)
+		if insertIndex == -1 && (strings.HasPrefix(trimmed, "AllowGroups") || strings.HasPrefix(trimmed, "Match ")) {
+			insertIndex = len(lines) - 1
 		}
 	}
 	if err := scanner.Err(); err != nil {
@@ -61,11 +70,17 @@ func main() {
 		return
 	}
 
-	// Step 5: Append subsystem line if needed
+	// Step 5: Insert if not found
 	if !found {
 		fmt.Println("➕ Adding PowerShell SSH subsystem to sshd_config...")
-		lines = append(lines, powershell_subsystem)
+
+		if insertIndex == -1 {
+			insertIndex = len(lines) // if no Match/AllowGroups found, append
+		}
+
+		lines = append(lines[:insertIndex], append([]string{powershell_subsystem}, lines[insertIndex:]...)...)
 		content := strings.Join(lines, "\r\n") + "\r\n"
+
 		err = os.WriteFile(config_path, []byte(content), 0644)
 		if err != nil {
 			fmt.Printf("❌ Failed to write sshd_config: %v\n", err)
@@ -75,6 +90,7 @@ func main() {
 	} else {
 		fmt.Println("ℹ️ PowerShell SSH subsystem already present. No changes needed.")
 	}
+
 
 	// Step 6: Restart sshd service
 	fmt.Println("🔄 Restarting sshd service...")
