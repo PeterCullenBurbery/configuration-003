@@ -35,14 +35,6 @@
     Write-Host "🚀 Running orchestration.exe with repository path:"
     Write-Host "    $repoPath"
     & $orchestrationPath $repoPath
-
-    if (-not (Test-Path $pinVsCodePath)) {
-        throw "❌ pin_vs_code_to_taskbar.exe not found at expected location: $pinVsCodePath"
-    }
-
-    Write-Host "📌 Running pin_vs_code_to_taskbar.exe..."
-    & $pinVsCodePath
-
 } catch {
     Write-Error "❌ Script failed: $_"
 } finally {
