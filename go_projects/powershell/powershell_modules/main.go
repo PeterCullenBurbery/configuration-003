@@ -18,8 +18,8 @@ func main() {
 	}
 
 	files := map[string]string{
-		"MyModule.psd1": "https://github.com/PeterCullenBurbery/configuration-003/blob/main/powershell-modules/MyModule/MyModule.psd1",
-		"MyModule.psm1": "https://github.com/PeterCullenBurbery/configuration-003/blob/main/powershell-modules/MyModule/MyModule.psm1",
+		"MyModule.psd1": "https://github.com/PeterCullenBurbery/powershell-modules/blob/main/MyModule/MyModule.psd1",
+		"MyModule.psm1": "https://github.com/PeterCullenBurbery/powershell-modules/blob/main/MyModule/MyModule.psm1",
 	}
 
 	for filename, blob_url := range files {
