@@ -55,7 +55,7 @@ func main() {
 		"SQL Developer.lnk",
 		"Oracle SQL Developer",
 		3, // 3 = Maximized window
-		false, // current user only
+		true, // true = all users
 	)
 	if err != nil {
 		log.Fatalf("❌ Failed to create shortcut: %v", err)
