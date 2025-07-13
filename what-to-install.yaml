@@ -12,6 +12,7 @@ what to install:
     # - notepadplusplus # Notepad++
     # - sqlitebrowser # SQLite Browser
     # - temurin21 # Java
+    - git # Git for windows
 # try to install Putty
 # install DBeaver too
 # install git for windows with choco install git -y
