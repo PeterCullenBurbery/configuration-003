@@ -48,13 +48,21 @@ func main() {
 		log.Fatalf("❌ Could not find sqldeveloper.exe: %v", err)
 	}
 
+	// Add to system PATH
+	sqldeveloperBin := filepath.Dir(exePath)
+	log.Printf("➕ Adding %s to system PATH...", sqldeveloperBin)
+	if err := system_management_functions.Add_to_path(sqldeveloperBin); err != nil {
+		log.Fatalf("❌ Failed to add to PATH: %v", err)
+	}
+	log.Println("✅ PATH updated.")
+
 	// Create shortcut
 	log.Println("🔗 Creating desktop shortcut...")
 	err = system_management_functions.Create_desktop_shortcut(
 		exePath,
 		"SQL Developer.lnk",
 		"Oracle SQL Developer",
-		3, // 3 = Maximized window
+		3,    // 3 = Maximized window
 		true, // true = all users
 	)
 	if err != nil {
