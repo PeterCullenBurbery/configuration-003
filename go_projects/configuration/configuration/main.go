@@ -34,58 +34,66 @@ func run_steps(base_dir string, category string, steps []struct {
 }
 
 func main() {
-	if len(os.Args) != 2 {
-		fmt.Println("❌ Usage: configuration.exe <path-to-configuration-003>")
-		os.Exit(1)
-	}
-	base_dir := os.Args[1]
+    if len(os.Args) != 2 {
+        fmt.Println("❌ Usage: configuration.exe <path-to-configuration-003>")
+        os.Exit(1)
+    }
+    base_dir := os.Args[1]
 
-	explorer_steps := []struct {
-		label    string
-		exe_name string
-	}{
-		{"🌙 dark_mode", "dark_mode.exe"},
-		{"📍 set_start_menu_to_left", "set_start_menu_to_left.exe"},
-		{"📄 show_file_extensions", "show_file_extensions.exe"},
-		{"🫥 show_hidden_files", "show_hidden_files.exe"},
-		{"🔍 hide_search_box", "hide_search_box.exe"},
-		{"⏱️ seconds_in_taskbar", "seconds_in_taskbar.exe"},
-	}
+    explorer_steps := []struct {
+        label    string
+        exe_name string
+    }{
+        {"🌙 dark_mode", "dark_mode.exe"},
+        {"📍 set_start_menu_to_left", "set_start_menu_to_left.exe"},
+        {"📄 show_file_extensions", "show_file_extensions.exe"},
+        {"🫥 show_hidden_files", "show_hidden_files.exe"},
+        {"🔍 hide_search_box", "hide_search_box.exe"},
+        {"⏱️ seconds_in_taskbar", "seconds_in_taskbar.exe"},
+    }
 
-	date_time_steps := []struct {
-		label    string
-		exe_name string
-	}{
-		{"🗓️ set_short_date_pattern", "set_short_date_pattern.exe"},
-		{"📆 set_long_date_pattern", "set_long_date_pattern.exe"},
-		{"⏰ set_time_pattern", "set_time_pattern.exe"},
-		{"🕐 set_24_hour_format", "set_24_hour_format.exe"},
-		{"📅 Set_first_day_of_week_Monday", "Set_first_day_of_week_Monday.exe"},
-	}
+    date_time_steps := []struct {
+        label    string
+        exe_name string
+    }{
+        {"🗓️ set_short_date_pattern", "set_short_date_pattern.exe"},
+        {"📆 set_long_date_pattern", "set_long_date_pattern.exe"},
+        {"⏰ set_time_pattern", "set_time_pattern.exe"},
+        {"🕐 set_24_hour_format", "set_24_hour_format.exe"},
+        {"📅 Set_first_day_of_week_Monday", "Set_first_day_of_week_Monday.exe"},
+    }
 
-	apps_steps := []struct {
-		label    string
-		exe_name string
-	}{
-		{"🛠️ configure_keyboard_shortcuts_for_vs_code", "configure_keyboard_shortcuts_for_vs_code.exe"},
-		{"⚙️ configure_settings_for_vs_code", "configure_settings_for_vs_code.exe"},
-		{"🪟 configure_settings_for_windows_terminal", "configure_settings_for_windows_terminal.exe"},
-		{"📌 set_windows_terminal_default_terminal_application", "set_windows_terminal_default_terminal_application.exe"},
-		{"📍 pin_vs_code_to_taskbar", "pin_vs_code_to_taskbar.exe"},
-	}
+    apps_steps := []struct {
+        label    string
+        exe_name string
+    }{
+        {"🛠️ configure_keyboard_shortcuts_for_vs_code", "configure_keyboard_shortcuts_for_vs_code.exe"},
+        {"⚙️ configure_settings_for_vs_code", "configure_settings_for_vs_code.exe"},
+        {"🪟 configure_settings_for_windows_terminal", "configure_settings_for_windows_terminal.exe"},
+        {"📌 set_windows_terminal_default_terminal_application", "set_windows_terminal_default_terminal_application.exe"},
+        {"📍 pin_vs_code_to_taskbar", "pin_vs_code_to_taskbar.exe"},
+    }
 
-	ssh_steps := []struct {
-		label    string
-		exe_name string
-	}{
-		{"🔐 ssh", "ssh.exe"},
-		{"📡 powershell_remoting", "powershell_remoting.exe"},
-	}
+    ssh_steps := []struct {
+        label    string
+        exe_name string
+    }{
+        {"🔐 ssh", "ssh.exe"},
+        {"📡 powershell_remoting", "powershell_remoting.exe"},
+    }
 
-	run_steps(base_dir, "explorer", explorer_steps)
-	run_steps(base_dir, "date-time", date_time_steps)
-	run_steps(base_dir, "apps", apps_steps)
-	run_steps(base_dir, "ssh_and_remote_access", ssh_steps)
+    files_steps := []struct {
+        label    string
+        exe_name string
+    }{
+        {"📁 file_structure", "file_structure.exe"},
+    }
+
+    run_steps(base_dir, "explorer", explorer_steps)
+    run_steps(base_dir, "date-time", date_time_steps)
+    run_steps(base_dir, "apps", apps_steps)
+    run_steps(base_dir, "ssh_and_remote_access", ssh_steps)
+    run_steps(base_dir, "files", files_steps)
 
 	// // 🧩 Run install_vs_code_extensions.exe with path to vs-code-extensions.yaml
 	// vs_code_yaml := filepath.Join(base_dir, "vs-code-extensions.yaml")
