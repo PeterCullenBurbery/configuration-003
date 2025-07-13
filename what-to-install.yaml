@@ -14,3 +14,4 @@ what to install:
     # - temurin21 # Java
 # try to install Putty
 # install DBeaver too
+# install git for windows with choco install git -y
