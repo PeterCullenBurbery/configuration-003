@@ -16,3 +16,4 @@ what to install:
 # try to install Putty
 # install DBeaver too
 # install git for windows with choco install git -y
+# install KeepassXC with choco install keepassxc -y
