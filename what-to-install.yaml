@@ -17,3 +17,4 @@ what to install:
 # install DBeaver too
 # install git for windows with choco install git -y
 # install KeepassXC with choco install keepassxc -y
+# install github cli with choco install gh -y
