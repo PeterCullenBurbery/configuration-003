@@ -21,3 +21,4 @@ what to install:
 # also consider adding automatic download Oracle instant client from https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html
 # it might be worth installing firefox by default because firefox has really good cookie support under storage
 # Look into installing Powershell Plus.
+# There's also an IntelliJ plugin for Powershell.
