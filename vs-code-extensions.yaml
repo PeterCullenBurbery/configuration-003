@@ -14,3 +14,4 @@ vs_code_extensions:
   - vscjava.vscode-java-pack
   - vscjava.vscode-java-test
   - vscjava.vscode-maven
+# Consider installing rainbow csv
