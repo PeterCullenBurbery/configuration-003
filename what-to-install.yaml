@@ -23,5 +23,5 @@ what to install:
 # Look into installing Powershell Plus.
 # There's also an IntelliJ plugin for Powershell.
 # Consider install msys64 with choco install msys2 -y
-# consider installing winmerge
+# consider installing winmerge with choco install winmerge -y
 # consider installing devtoys
