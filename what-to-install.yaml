@@ -29,3 +29,4 @@ what to install:
 # consider installing visualstudiocommunity with choco install visualstudio2022community --yes
 # consider installing winget install ThioJoe.SvgThumbnailExtension
 # consider installing C# vscode extension
+# You need to install C++ desktop development and .net development
