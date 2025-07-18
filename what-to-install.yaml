@@ -25,3 +25,5 @@ what to install:
 # Consider install msys64 with choco install msys2 -y
 # consider installing winmerge with choco install winmerge -y
 # consider installing devtoys
+# consider installing .net 9
+# consider installing visualstudiocommunity with choco install visualstudio2022community --yes
