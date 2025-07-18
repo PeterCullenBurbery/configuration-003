@@ -28,3 +28,4 @@ what to install:
 # consider installing .net 9
 # consider installing visualstudiocommunity with choco install visualstudio2022community --yes
 # consider installing winget install ThioJoe.SvgThumbnailExtension
+# consider installing C# vscode extension
