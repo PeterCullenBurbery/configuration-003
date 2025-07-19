@@ -4,6 +4,11 @@ vs_code_extensions:
   - ms-python.debugpy # Python extensions
   - ms-python.python
   - ms-python.vscode-pylance
+  - ms-toolsai.jupyter # Jupyter support
+  - ms-toolsai.jupyter-keymap
+  - ms-toolsai.jupyter-renderers
+  - ms-toolsai.vscode-jupyter-cell-tags
+  - ms-toolsai.vscode-jupyter-slideshow
   - ms-vscode.powershell # Powershell
   - redhat.java # Java
   - tomoki1207.pdf # PDF viewer
