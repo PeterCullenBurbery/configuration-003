@@ -31,8 +31,12 @@ func main() {
 	base_dir := os.Args[1]
 	powershell_path := filepath.Join(base_dir, "go_projects", "powershell")
 
-	// 👉 Install module using Windows PowerShell (powershell.exe)
+	// Install for PowerShell 5
 	log.Println("📦 Installing PowershellFunctions with Windows PowerShell (powershell.exe)")
+
+	exec.Command("powershell.exe", "-NoProfile", "-Command", "Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force").Run()
+	exec.Command("powershell.exe", "-NoProfile", "-Command", "Set-PSRepository -Name PSGallery -InstallationPolicy Trusted").Run()
+
 	cmd1 := exec.Command("powershell.exe", "-NoProfile", "-Command", "Install-Module -Name PowershellFunctions")
 	cmd1.Stdout = os.Stdout
 	cmd1.Stderr = os.Stderr
@@ -42,7 +46,7 @@ func main() {
 		log.Println("✅ Installed with powershell.exe")
 	}
 
-	// 👉 Install module using PowerShell 7 (pwsh)
+	// Install for PowerShell 7
 	log.Println("📦 Installing PowershellFunctions with PowerShell 7 (pwsh)")
 	pwsh_path := "pwsh"
 	if _, err := exec.LookPath(pwsh_path); err != nil {
@@ -57,6 +61,8 @@ func main() {
 	}
 
 	if pwsh_path != "" {
+		exec.Command(pwsh_path, "-NoProfile", "-Command", "Set-PSRepository -Name PSGallery -InstallationPolicy Trusted").Run()
+
 		cmd2 := exec.Command(pwsh_path, "-NoProfile", "-Command", "Install-Module -Name PowershellFunctions")
 		cmd2.Stdout = os.Stdout
 		cmd2.Stderr = os.Stderr
