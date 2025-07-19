@@ -1,17 +1,18 @@
 vs_code_extensions:
-  - golang.go
-  - ms-python.debugpy
+  - golang.go # Go lang extension
+  - mechatroner.rainbow-csv # Rainbow CSV for viewing CSV files
+  - ms-python.debugpy # Python extensions
   - ms-python.python
   - ms-python.vscode-pylance
-  - ms-vscode.powershell
-  - redhat.java
-  - tomoki1207.pdf
-  - visualstudioexptteam.intellicode-api-usage-examples
+  - ms-vscode.powershell # Powershell
+  - redhat.java # Java
+  - tomoki1207.pdf # PDF viewer
+  - visualstudioexptteam.intellicode-api-usage-examples # intellisense
   - visualstudioexptteam.vscodeintellicode
-  - vscjava.vscode-gradle
-  - vscjava.vscode-java-debug
+  - vscjava.vscode-gradle # Gradle
+  - vscjava.vscode-java-debug # Java
   - vscjava.vscode-java-dependency
   - vscjava.vscode-java-pack
   - vscjava.vscode-java-test
-  - vscjava.vscode-maven
+  - vscjava.vscode-maven # Maven
 # Consider installing rainbow csv
