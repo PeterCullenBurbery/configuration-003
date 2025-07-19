@@ -4,29 +4,32 @@ what to install:
     - Microsoft.VisualStudioCode # Vs code
     - 7zip.7zip # 7zip
     - voidtools.Everything # Voidtools everything
-    - WinSCP.WinSCP # WinSCP
-    - ApacheFriends.Xampp.8.2 # XAMPP
+    # - WinSCP.WinSCP # WinSCP
+    # - ApacheFriends.Xampp.8.2 # XAMPP
     # - DevToys-app.DevToys # DevToys
     # has diff and lower
     # DevToys doesn't work (at the moment). I don't know why.
-    - ThioJoe.SvgThumbnailExtension # to view SVGs in file explorer
-    - DBeaver.DBeaver.Enterprise # Dbeaver
+    # - ThioJoe.SvgThumbnailExtension # to view SVGs in file explorer
+# ThioJoe.SvgThumbnailExtension failed to install.
+# 2025/07/19 08:13:49 🚀 Starting installation of ThioJoe.SvgThumbnailExtension via winget...
+# 2025/07/19 08:13:49 ❌ Winget install failed for ThioJoe.SvgThumbnailExtension: ❌ Failed to install ThioJoe.SvgThumbnailExtension via winget: fork/exec C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps\winget.exe: The deployment operation failed because the specified application needs to be registered first.
+    # - DBeaver.DBeaver.Enterprise # Dbeaver
     # choco Dbeaver EE is out-of-date, but winget DBeaver EE is up to date. 25.1.0 currently at the moment.
   choco:
-    - mobaxterm # MobaXTerm
-    - golang # Go
-    - notepadplusplus # Notepad++
-    - sqlitebrowser # SQLite Browser
-    - temurin21 # Java
-    - git # Git for windows
-    - keepassxc # KeepassXC
-    - gh # GitHub command-line cli
-    - firefox # firefox has really good cookie support under storage
-    - msys2
-    - winmerge
-    - dotnet-9.0-sdk # .NET 9
-    - visualstudio2022community # Visual Studio 2022 community
-    - putty # Putty for SSH
+    # - mobaxterm # MobaXTerm
+    # - golang # Go
+    # - notepadplusplus # Notepad++
+    # - sqlitebrowser # SQLite Browser
+    # - temurin21 # Java
+    # - git # Git for windows
+    # - keepassxc # KeepassXC
+    # - gh # GitHub command-line cli
+    # - firefox # firefox has really good cookie support under storage
+    # - msys2
+    # - winmerge
+    # - dotnet-9.0-sdk # .NET 9
+    # - visualstudio2022community # Visual Studio 2022 community
+    # - putty # Putty for SSH
 # try to install Putty
 # install DBeaver too
 # install git for windows with choco install git -y
