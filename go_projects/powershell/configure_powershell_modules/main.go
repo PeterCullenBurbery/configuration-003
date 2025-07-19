@@ -31,15 +31,43 @@ func main() {
 	base_dir := os.Args[1]
 	powershell_path := filepath.Join(base_dir, "go_projects", "powershell")
 
-	// 🔧 Run PowerShell with exact command: Install-Module -Name PowershellFunctions
-	log.Println("📦 Running: Install-Module -Name PowershellFunctions")
-	cmd := exec.Command("pwsh", "-NoProfile", "-Command", "Install-Module -Name PowershellFunctions")
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	if err := cmd.Run(); err != nil {
-		log.Fatalf("❌ Install-Module failed: %v", err)
+	// 👉 Install module using Windows PowerShell (powershell.exe)
+	log.Println("📦 Installing PowershellFunctions with Windows PowerShell (powershell.exe)")
+	cmd1 := exec.Command("powershell.exe", "-NoProfile", "-Command", "Install-Module -Name PowershellFunctions")
+	cmd1.Stdout = os.Stdout
+	cmd1.Stderr = os.Stderr
+	if err := cmd1.Run(); err != nil {
+		log.Printf("⚠️ Install-Module with powershell.exe failed: %v", err)
+	} else {
+		log.Println("✅ Installed with powershell.exe")
 	}
-	log.Println("✅ Install-Module completed.")
+
+	// 👉 Install module using PowerShell 7 (pwsh)
+	log.Println("📦 Installing PowershellFunctions with PowerShell 7 (pwsh)")
+	pwsh_path := "pwsh"
+	if _, err := exec.LookPath(pwsh_path); err != nil {
+		alt_path := `C:\Program Files\PowerShell\7\pwsh.exe`
+		if _, err := os.Stat(alt_path); err == nil {
+			pwsh_path = alt_path
+			log.Printf("ℹ️ Using fallback path for pwsh: %s\n", pwsh_path)
+		} else {
+			log.Printf("⚠️ pwsh not found at default locations: %v", err)
+			pwsh_path = "" // prevent usage
+		}
+	}
+
+	if pwsh_path != "" {
+		cmd2 := exec.Command(pwsh_path, "-NoProfile", "-Command", "Install-Module -Name PowershellFunctions")
+		cmd2.Stdout = os.Stdout
+		cmd2.Stderr = os.Stderr
+		if err := cmd2.Run(); err != nil {
+			log.Printf("⚠️ Install-Module with pwsh failed: %v", err)
+		} else {
+			log.Println("✅ Installed with pwsh")
+		}
+	} else {
+		log.Println("⚠️ Skipped PowerShell 7 installation: pwsh not found")
+	}
 
 	run_executable("ip_address.exe", filepath.Join(powershell_path, "IP_address", "IP_address.exe"), base_dir)
 	run_executable("powershell_005_profile.exe", filepath.Join(powershell_path, "powershell_005_profile", "powershell_005_profile.exe"), base_dir)
