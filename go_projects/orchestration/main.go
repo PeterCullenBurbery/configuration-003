@@ -8,12 +8,12 @@ import (
 	"path/filepath"
 )
 
-func runExecutable(label, exePath string, args ...string) {
-	if _, err := os.Stat(exePath); err != nil {
-		log.Fatalf("❌ %s not found at: %s\n%v", label, exePath, err)
+func run_executable(label, exe_path string, args ...string) {
+	if _, err := os.Stat(exe_path); err != nil {
+		log.Fatalf("❌ %s not found at: %s\n%v", label, exe_path, err)
 	}
-	log.Printf("🚀 Launching %s: %s %v\n", label, exePath, args)
-	cmd := exec.Command(exePath, args...)
+	log.Printf("🚀 Launching %s: %s %v\n", label, exe_path, args)
+	cmd := exec.Command(exe_path, args...)
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	if err := cmd.Run(); err != nil {
@@ -28,15 +28,17 @@ func main() {
 		os.Exit(1)
 	}
 
-	baseDir := os.Args[1]
+	base_dir := os.Args[1]
 
-	installThings := filepath.Join(baseDir, "go_projects", "install", "install_things", "install_things.exe")
-	configuration := filepath.Join(baseDir, "go_projects", "configuration", "configuration", "configuration.exe")
-	configurePowershell := filepath.Join(baseDir, "go_projects", "powershell", "configure_powershell_modules", "configure_powershell_modules.exe")
+	install_things_path := filepath.Join(base_dir, "go_projects", "install", "install_things", "install_things.exe")
+	configuration_path := filepath.Join(base_dir, "go_projects", "configuration", "configuration", "configuration.exe")
+	configure_powershell_path := filepath.Join(base_dir, "go_projects", "powershell", "configure_powershell_modules", "configure_powershell_modules.exe")
+	install_pip_packages_path := filepath.Join(base_dir, "go_projects", "install_pip_packages", "install_pip_packages.exe")
 
-	runExecutable("install_things.exe", installThings, baseDir)
-	runExecutable("configuration.exe", configuration, baseDir)
-	runExecutable("configure_powershell_modules.exe", configurePowershell, baseDir)
+	run_executable("install_things.exe", install_things_path, base_dir)
+	run_executable("configuration.exe", configuration_path, base_dir)
+	run_executable("configure_powershell_modules.exe", configure_powershell_path, base_dir)
+	run_executable("install_pip_packages.exe", install_pip_packages_path, base_dir)
 
 	log.Println("🏁 orchestration.exe finished successfully.")
 }
