@@ -31,10 +31,17 @@ func main() {
 	base_dir := os.Args[1]
 	powershell_path := filepath.Join(base_dir, "go_projects", "powershell")
 
-	run_executable("powershell_modules.exe", filepath.Join(powershell_path, "powershell_modules", "powershell_modules.exe"), base_dir)
+	// 🔧 Run PowerShell with exact command: Install-Module -Name PowershellFunctions
+	log.Println("📦 Running: Install-Module -Name PowershellFunctions")
+	cmd := exec.Command("pwsh", "-NoProfile", "-Command", "Install-Module -Name PowershellFunctions")
+	cmd.Stdout = os.Stdout
+	cmd.Stderr = os.Stderr
+	if err := cmd.Run(); err != nil {
+		log.Fatalf("❌ Install-Module failed: %v", err)
+	}
+	log.Println("✅ Install-Module completed.")
 
 	run_executable("ip_address.exe", filepath.Join(powershell_path, "IP_address", "IP_address.exe"), base_dir)
-
 	run_executable("powershell_005_profile.exe", filepath.Join(powershell_path, "powershell_005_profile", "powershell_005_profile.exe"), base_dir)
 	run_executable("powershell_007_profile.exe", filepath.Join(powershell_path, "powershell_007_profile", "powershell_007_profile.exe"), base_dir)
 
