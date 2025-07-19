@@ -10,6 +10,8 @@ what to install:
     # has diff and lower
     # DevToys doesn't work (at the moment). I don't know why.
     - ThioJoe.SvgThumbnailExtension # to view SVGs in file explorer
+    - DBeaver.DBeaver.Enterprise # Dbeaver
+    # choco Dbeaver EE is out-of-date, but winget DBeaver EE is up to date. 25.1.0 currently at the moment.
   choco:
     - mobaxterm # MobaXTerm
     - golang # Go
