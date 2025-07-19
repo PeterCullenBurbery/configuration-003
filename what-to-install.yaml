@@ -30,6 +30,7 @@ what to install:
     # - dotnet-9.0-sdk # .NET 9
     # - visualstudio2022community # Visual Studio 2022 community
     # - putty # Putty for SSH
+    # - openvpn-connect # OpenVPN 3.7.2 for connect
 # try to install Putty
 # install DBeaver too
 # install git for windows with choco install git -y
@@ -48,3 +49,4 @@ what to install:
 # consider installing C# vscode extension
 # You need to install C++ desktop development and .net development
 # install "Auto save file" for Visual Studio 2022
+# consider adding openvpn too choco install openvpn-connect --yes
