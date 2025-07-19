@@ -5,22 +5,22 @@ what to install:
     - 7zip.7zip # 7zip
     - voidtools.Everything # Voidtools everything
     - WinSCP.WinSCP # WinSCP
-    - ApacheFriends.Xampp.8.2 # XAMPP
+    # - ApacheFriends.Xampp.8.2 # XAMPP
     # - DevToys-app.DevToys # DevToys
     # has diff and lower
     # DevToys doesn't work (at the moment). I don't know why.
   choco:
-    - mobaxterm # MobaXTerm
-    - golang # Go
-    - notepadplusplus # Notepad++
-    - sqlitebrowser # SQLite Browser
-    - temurin21 # Java
-    - git # Git for windows
-    - keepassxc # KeepassXC
-    - gh # GitHub command-line cli
-    - firefox # firefox has really good cookie support under storage
-    - msys2
-    - winmerge
+    # - mobaxterm # MobaXTerm
+    # - golang # Go
+    # - notepadplusplus # Notepad++
+    # - sqlitebrowser # SQLite Browser
+    # - temurin21 # Java
+    # - git # Git for windows
+    # - keepassxc # KeepassXC
+    # - gh # GitHub command-line cli
+    # - firefox # firefox has really good cookie support under storage
+    # - msys2
+    # - winmerge
 # try to install Putty
 # install DBeaver too
 # install git for windows with choco install git -y
