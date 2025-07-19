@@ -12,7 +12,7 @@ import (
 
 func main() {
 	if len(os.Args) != 2 {
-		fmt.Println("❌ Usage: install_python_packages.exe <path-to-configuration-003>")
+		fmt.Println("❌ Usage: install_pip_packages.exe <path-to-configuration-003>")
 		os.Exit(1)
 	}
 
@@ -47,8 +47,24 @@ func main() {
 		return
 	}
 
+	// Try "pip" first
+	pip_executable := "pip"
+
+	// Check if "pip" exists in PATH
+	_, err = exec.LookPath(pip_executable)
+	if err != nil {
+		// Fallback to known Miniconda path
+		alt_pip := `C:\ProgramData\Miniconda3\Scripts\pip.exe`
+		if _, stat_err := os.Stat(alt_pip); stat_err == nil {
+			log.Printf("⚠️ 'pip' not in PATH. Falling back to: %s", alt_pip)
+			pip_executable = alt_pip
+		} else {
+			log.Fatalf("❌ 'pip' not found and fallback pip.exe also missing.")
+		}
+	}
+
 	pip_args := append([]string{"install"}, package_list...)
-	pip_cmd := exec.Command("pip", pip_args...)
+	pip_cmd := exec.Command(pip_executable, pip_args...)
 	pip_cmd.Stdout = os.Stdout
 	pip_cmd.Stderr = os.Stderr
 
