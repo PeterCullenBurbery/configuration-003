@@ -1,0 +1,19 @@
+python packages:
+  - arrow          # Better date/time handling
+  - faker          # Generate fake data (names, addresses, etc.)
+  - funcy          # Functional programming utilities
+  - keyboard       # Keyboard automation and hotkeys
+  - matplotlib     # Plotting and visualization
+  - more_itertools # Extra itertools recipes
+  - numpy          # Numerical computations and arrays
+  - pandas         # Data manipulation and analysis
+  - pillow         # Image processing
+  - prettytable    # Print tables in ASCII format
+  - psutil         # System and process monitoring
+  - pyautogui      # GUI automation (mouse, keyboard) # gui
+  - pycryptodome   # Cryptography library (symmetric/asymmetric)
+  - pyinstaller    # Bundle Python apps into standalone executables
+  - pyscreeze      # Screenshot and image search support (used by pyautogui) # gui
+  - pywinauto      # Windows GUI automation (controls, dialogs) # gui
+  - stdlib_list    # List standard library modules for a specific Python version
+  - sympy          # Symbolic mathematics (algebra, calculus, etc.)
