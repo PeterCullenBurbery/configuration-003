@@ -24,6 +24,7 @@ what to install:
     - winmerge
     - dotnet-9.0-sdk # .NET 9
     - visualstudio2022community # Visual Studio 2022 community
+    - putty # Putty for SSH
 # try to install Putty
 # install DBeaver too
 # install git for windows with choco install git -y
