@@ -50,3 +50,5 @@ what to install:
 # You need to install C++ desktop development and .net development
 # install "Auto save file" for Visual Studio 2022
 # consider adding openvpn too choco install openvpn-connect --yes
+# consider installing wiztree
+# consider installing everything with choco instead of winget choco install everything --yes
