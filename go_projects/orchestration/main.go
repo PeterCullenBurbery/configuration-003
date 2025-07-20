@@ -33,12 +33,12 @@ func main() {
 	install_things_path := filepath.Join(base_dir, "go_projects", "install", "install_things", "install_things.exe")
 	configuration_path := filepath.Join(base_dir, "go_projects", "configuration", "configuration", "configuration.exe")
 	configure_powershell_path := filepath.Join(base_dir, "go_projects", "powershell", "configure_powershell_modules", "configure_powershell_modules.exe")
-	install_pip_packages_path := filepath.Join(base_dir, "go_projects", "install_pip_packages", "install_pip_packages.exe")
+	// install_pip_packages_path := filepath.Join(base_dir, "go_projects", "install_pip_packages", "install_pip_packages.exe")
 
 	run_executable("install_things.exe", install_things_path, base_dir)
 	run_executable("configuration.exe", configuration_path, base_dir)
 	run_executable("configure_powershell_modules.exe", configure_powershell_path, base_dir)
-	run_executable("install_pip_packages.exe", install_pip_packages_path, base_dir)
+	// run_executable("install_pip_packages.exe", install_pip_packages_path, base_dir)
 
 	log.Println("🏁 orchestration.exe finished successfully.")
 }
