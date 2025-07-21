@@ -31,21 +31,21 @@ func main() {
 	base_dir := os.Args[1]
 	powershell_path := filepath.Join(base_dir, "go_projects", "powershell")
 
-	// Install with Windows PowerShell (powershell.exe)
-	log.Println("📦 Installing PowershellFunctions with Windows PowerShell (powershell.exe)")
+	// Install PowershellFunctions005 with Windows PowerShell
+	log.Println("📦 Installing PowershellFunctions005 with Windows PowerShell (powershell.exe)")
 	exec.Command("powershell.exe", "-NoProfile", "-Command", "Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force").Run()
 	exec.Command("powershell.exe", "-NoProfile", "-Command", "Set-PSRepository -Name PSGallery -InstallationPolicy Trusted").Run()
 
-	cmd := exec.Command("powershell.exe", "-NoProfile", "-Command", "Install-Module -Name PowershellFunctions -Force")
+	cmd := exec.Command("powershell.exe", "-NoProfile", "-Command", "Install-Module -Name PowershellFunctions005 -Force")
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	if err := cmd.Run(); err != nil {
-		log.Printf("⚠️ Install-Module with powershell.exe failed: %v", err)
+		log.Printf("⚠️ Install-Module PowershellFunctions005 with powershell.exe failed: %v", err)
 	} else {
-		log.Println("✅ Installed with powershell.exe")
+		log.Println("✅ Installed PowershellFunctions005 with powershell.exe")
 	}
 
-	// Optional: Check if pwsh sees the module
+	// Install PowershellFunctions007 with PowerShell 7+
 	pwsh_path := "pwsh"
 	if _, err := exec.LookPath(pwsh_path); err != nil {
 		alt := `C:\Program Files\PowerShell\7\pwsh.exe`
@@ -53,32 +53,24 @@ func main() {
 			pwsh_path = alt
 			log.Printf("ℹ️ Using fallback pwsh path: %s", pwsh_path)
 		} else {
-			log.Println("⚠️ pwsh not found — skipping pwsh-specific check")
-			pwsh_path = ""
+			log.Fatalln("❌ pwsh not found — cannot install PowershellFunctions007")
 		}
 	}
 
-	if pwsh_path != "" {
-		check_cmd := exec.Command(pwsh_path, "-NoProfile", "-Command", "if (-not (Get-Module PowershellFunctions -ListAvailable)) { exit 1 }")
-		if err := check_cmd.Run(); err != nil {
-			log.Println("📦 PowershellFunctions not found in pwsh — installing...")
-			exec.Command(pwsh_path, "-NoProfile", "-Command", "Set-PSRepository -Name PSGallery -InstallationPolicy Trusted").Run()
+	log.Println("📦 Installing PowershellFunctions007 with pwsh")
+	exec.Command(pwsh_path, "-NoProfile", "-Command", "Set-PSRepository -Name PSGallery -InstallationPolicy Trusted").Run()
 
-			install_cmd := exec.Command(pwsh_path, "-NoProfile", "-Command", "Install-Module -Name PowershellFunctions -Force")
-			install_cmd.Stdout = os.Stdout
-			install_cmd.Stderr = os.Stderr
-			if err := install_cmd.Run(); err != nil {
-				log.Printf("⚠️ Install-Module with pwsh failed: %v", err)
-			} else {
-				log.Println("✅ Installed with pwsh")
-			}
-		} else {
-			log.Println("✅ PowershellFunctions already available to pwsh — skipping install")
-		}
+	install_cmd := exec.Command(pwsh_path, "-NoProfile", "-Command", "Install-Module -Name PowershellFunctions007 -Force")
+	install_cmd.Stdout = os.Stdout
+	install_cmd.Stderr = os.Stderr
+	if err := install_cmd.Run(); err != nil {
+		log.Fatalf("❌ Install-Module PowershellFunctions007 with pwsh failed: %v", err)
+	} else {
+		log.Println("✅ Installed PowershellFunctions007 with pwsh")
 	}
 
 	// Execute profile config tools
-	run_executable("ip_address.exe", filepath.Join(powershell_path, "IP_address", "IP_address.exe"), base_dir)
+	run_executable("ip_address.exe", filepath.Join(powershell_path, "IP_address", "ip_address.exe"), base_dir)
 	run_executable("powershell_005_profile.exe", filepath.Join(powershell_path, "powershell_005_profile", "powershell_005_profile.exe"), base_dir)
 	run_executable("powershell_007_profile.exe", filepath.Join(powershell_path, "powershell_007_profile", "powershell_007_profile.exe"), base_dir)
 
