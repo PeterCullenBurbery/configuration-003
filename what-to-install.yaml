@@ -15,6 +15,7 @@ what to install:
 # 2025/07/19 08:13:49 ❌ Winget install failed for ThioJoe.SvgThumbnailExtension: ❌ Failed to install ThioJoe.SvgThumbnailExtension via winget: fork/exec C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps\winget.exe: The deployment operation failed because the specified application needs to be registered first.
     # - DBeaver.DBeaver.Enterprise # Dbeaver
     # choco Dbeaver EE is out-of-date, but winget DBeaver EE is up to date. 25.1.0 currently at the moment.
+    - TheDocumentFoundation.LibreOffice # LibreOffice
   choco:
     # - mobaxterm # MobaXTerm
     # - golang # Go
@@ -52,3 +53,4 @@ what to install:
 # consider adding openvpn too choco install openvpn-connect --yes
 # consider installing wiztree
 # consider installing everything with choco instead of winget choco install everything --yes
+# consider installing LibreOffice with winget install TheDocumentFoundation.LibreOffice
