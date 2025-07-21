@@ -60,7 +60,7 @@ func main() {
 	log.Println("📦 Installing PowershellFunctions007 with pwsh")
 	exec.Command(pwsh_path, "-NoProfile", "-Command", "Set-PSRepository -Name PSGallery -InstallationPolicy Trusted").Run()
 
-	install_cmd := exec.Command(pwsh_path, "-NoProfile", "-Command", "Install-Module -Name PowershellFunctions007 -Force")
+	install_cmd := exec.Command(pwsh_path, "-NoProfile", "-Command", "Install-Module -Name PowershellFunctions007 -Force -AllowClobber")
 	install_cmd.Stdout = os.Stdout
 	install_cmd.Stderr = os.Stderr
 	if err := install_cmd.Run(); err != nil {
