@@ -35,10 +35,10 @@ func main() {
 	// Step 3: Define constants
 	const config_path = `C:\ProgramData\ssh\sshd_config`
 	const powershell_subsystem = `Subsystem   powershell   "C:\Program Files\PowerShell\7\pwsh.exe" -sshs -NoLogo`
+	const sftp_subsystem = `Subsystem   sftp    C:/Windows/System32/OpenSSH/sftp-server.exe`
 
-	// Step 4: Check sshd_config for subsystem entry and insertion point
-	fmt.Println("📂 Checking sshd_config for PowerShell SSH subsystem...")
-
+	// Step 4: Read sshd_config
+	fmt.Println("📂 Checking sshd_config for Subsystem lines...")
 	file, err := os.Open(config_path)
 	if err != nil {
 		fmt.Printf("❌ Failed to open sshd_config: %v\n", err)
@@ -47,52 +47,88 @@ func main() {
 	defer file.Close()
 
 	var lines []string
-	found := false
-	insertIndex := -1
+	var insertIndex = -1
+	foundPWSH := false
+	foundSFTP := false
 
 	scanner := bufio.NewScanner(file)
 	for scanner.Scan() {
 		line := scanner.Text()
 		trimmed := strings.TrimSpace(line)
-		lines = append(lines, line)
+		lower := strings.ToLower(trimmed)
 
-		if strings.Contains(trimmed, "Subsystem") && strings.Contains(trimmed, "powershell") {
-			found = true
+		if strings.HasPrefix(lower, "subsystem") && strings.Contains(lower, "powershell") {
+			foundPWSH = true
 		}
-
-		// Find first suitable insertion point (before AllowGroups or Match block)
+		if strings.HasPrefix(lower, "subsystem") && strings.Contains(lower, "sftp") {
+			// if incorrect, we’ll replace it later
+			if !strings.Contains(trimmed, "C:/Windows/System32/OpenSSH/sftp-server.exe") {
+				continue
+			}
+			foundSFTP = true
+		}
 		if insertIndex == -1 && (strings.HasPrefix(trimmed, "AllowGroups") || strings.HasPrefix(trimmed, "Match ")) {
-			insertIndex = len(lines) - 1
+			insertIndex = len(lines)
 		}
+		lines = append(lines, line)
 	}
 	if err := scanner.Err(); err != nil {
 		fmt.Printf("❌ Error reading sshd_config: %v\n", err)
 		return
 	}
 
-	// Step 5: Insert if not found
-	if !found {
-		fmt.Println("➕ Adding PowerShell SSH subsystem to sshd_config...")
+	// Step 5: Modify the file
+	updated := false
+	var newLines []string
+	for _, line := range lines {
+		trimmed := strings.TrimSpace(line)
+		lower := strings.ToLower(trimmed)
 
-		if insertIndex == -1 {
-			insertIndex = len(lines) // if no Match/AllowGroups found, append
+		if strings.HasPrefix(lower, "subsystem") && strings.Contains(lower, "sftp") &&
+			!strings.Contains(trimmed, "C:/Windows/System32/OpenSSH/sftp-server.exe") {
+			fmt.Println("✏️ Fixing incorrect SFTP subsystem entry...")
+			newLines = append(newLines, sftp_subsystem)
+			updated = true
+			continue
 		}
+		newLines = append(newLines, line)
+	}
 
-		lines = append(lines[:insertIndex], append([]string{powershell_subsystem}, lines[insertIndex:]...)...)
-		content := strings.Join(lines, "\r\n") + "\r\n"
+	if !foundPWSH {
+		fmt.Println("➕ Adding PowerShell SSH subsystem...")
+		if insertIndex == -1 {
+			insertIndex = len(newLines)
+		}
+		newLines = append(newLines[:insertIndex], append([]string{powershell_subsystem}, newLines[insertIndex:]...)...)
+		updated = true
+	} else {
+		fmt.Println("ℹ️ PowerShell SSH subsystem already present.")
+	}
 
-		err = os.WriteFile(config_path, []byte(content), 0644)
-		if err != nil {
+	if !foundSFTP {
+		fmt.Println("➕ Adding SFTP subsystem...")
+		if insertIndex == -1 {
+			insertIndex = len(newLines)
+		}
+		newLines = append(newLines[:insertIndex], append([]string{sftp_subsystem}, newLines[insertIndex:]...)...)
+		updated = true
+	} else {
+		fmt.Println("ℹ️ Correct SFTP subsystem already present.")
+	}
+
+	if updated {
+		fmt.Println("💾 Writing updated sshd_config...")
+		content := strings.Join(newLines, "\r\n") + "\r\n"
+		if err := os.WriteFile(config_path, []byte(content), 0644); err != nil {
 			fmt.Printf("❌ Failed to write sshd_config: %v\n", err)
 			return
 		}
-		fmt.Println("✅ PowerShell SSH subsystem added.")
+		fmt.Println("✅ sshd_config updated.")
 	} else {
-		fmt.Println("ℹ️ PowerShell SSH subsystem already present. No changes needed.")
+		fmt.Println("✅ sshd_config is already up to date.")
 	}
 
-
-	// Step 6: Restart sshd service
+	// Step 6: Restart sshd
 	fmt.Println("🔄 Restarting sshd service...")
 	if err := run_powershell_command("Restart-Service sshd"); err != nil {
 		fmt.Printf("❌ Failed to restart sshd service: %v\n", err)
