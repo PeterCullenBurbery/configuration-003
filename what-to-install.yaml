@@ -32,7 +32,7 @@ what to install:
     # - visualstudio2022community # Visual Studio 2022 community
     # - putty # Putty for SSH
     # - openvpn-connect # OpenVPN 3.7.2 for connect
-    - keepass # KeePass NOT KeePassXC
+    # - keepass # KeePass NOT KeePassXC
 # try to install Putty
 # install DBeaver too
 # install git for windows with choco install git -y
