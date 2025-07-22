@@ -5,8 +5,8 @@ import (
 	"os"
 	"path/filepath"
 
-	"github.com/PeterCullenBurbery/go_functions_002/date_time_functions"
-	"github.com/PeterCullenBurbery/go_functions_002/system_management_functions"
+	"github.com/PeterCullenBurbery/go_functions_002/v4/date_time_functions"
+	"github.com/PeterCullenBurbery/go_functions_002/v4/system_management_functions"
 )
 
 func main() {
