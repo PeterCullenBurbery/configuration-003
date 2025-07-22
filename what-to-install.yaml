@@ -32,6 +32,7 @@ what to install:
     # - visualstudio2022community # Visual Studio 2022 community
     # - putty # Putty for SSH
     # - openvpn-connect # OpenVPN 3.7.2 for connect
+    - keepass # KeePass NOT KeePassXC
 # try to install Putty
 # install DBeaver too
 # install git for windows with choco install git -y
@@ -54,3 +55,10 @@ what to install:
 # consider installing wiztree
 # consider installing everything with choco instead of winget choco install everything --yes
 # consider installing LibreOffice with winget install TheDocumentFoundation.LibreOffice
+KeePass has some advantages over KeePassXC like:
+  - KeePass does not disappear when you try to take a screenshot
+  - whereas KeePassXC will disappear when you take a screenshot
+  - you don't have to type in 2718 PIN every time.
+minor:
+  - you can install plugins. I think KeePassXC does not support plugins.
+  - KeePassXC does support advanced; KeePass does not.
