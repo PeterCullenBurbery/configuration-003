@@ -9,8 +9,8 @@ import (
 
 	"golang.org/x/sys/windows/registry"
 
-	"github.com/PeterCullenBurbery/go_functions_002/v3/date_time_functions"
-	"github.com/PeterCullenBurbery/go_functions_002/v3/system_management_functions"
+	"github.com/PeterCullenBurbery/go_functions_002/v4/date_time_functions"
+	"github.com/PeterCullenBurbery/go_functions_002/v4/system_management_functions"
 )
 
 func main() {

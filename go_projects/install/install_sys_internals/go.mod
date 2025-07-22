@@ -3,7 +3,7 @@ module install_sys_internals
 go 1.24.4
 
 require (
-	github.com/PeterCullenBurbery/go_functions_002/v3 v3.3.4
+	github.com/PeterCullenBurbery/go_functions_002/v4 v4.6.0
 	golang.org/x/sys v0.33.0
 )
 
