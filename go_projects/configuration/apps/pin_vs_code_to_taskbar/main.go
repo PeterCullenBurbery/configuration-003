@@ -26,7 +26,7 @@ func main() {
 	}
 
 	// Step 2: Convert GitHub blob to raw URL
-	blob_url := "https://github.com/PeterCullenBurbery/configuration-003/blob/main/python_projects/pin_vs_code_to_taskbar/dist/pin_vs_code_to_taskbar.exe"
+	blob_url := "https://github.com/PeterCullenBurbery/python-projects-semipublic/blob/main/pin_vs_code_to_taskbar/pin_vs_code_to_taskbar_001/dist/part-001.exe"
 	fmt.Println("🔗 Converting GitHub blob to raw URL...")
 	raw_url, err := system_management_functions.Convert_blob_to_raw_github_url(blob_url)
 	if err != nil {
