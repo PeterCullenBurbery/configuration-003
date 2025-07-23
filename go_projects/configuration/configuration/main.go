@@ -68,7 +68,7 @@ func main() {
         exe_name string
     }{
         {"🖱️ bring_back_the_right_click_menu", "bring_back_the_right_click_menu.exe"},
-        // {"📁 enable_long_file_paths", "enable_long_file_paths.exe"},
+        {"📁 enable_long_file_paths", "enable_long_file_paths.exe"},
     }
 
     apps_steps := []struct {
