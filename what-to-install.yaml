@@ -4,7 +4,7 @@ what to install:
     - Microsoft.VisualStudioCode # Vs code
     - 7zip.7zip # 7zip
     - voidtools.Everything # Voidtools everything
-    - WinSCP.WinSCP # WinSCP
+    # - WinSCP.WinSCP # WinSCP
     # - ApacheFriends.Xampp.8.2 # XAMPP
     # - DevToys-app.DevToys # DevToys
     # has diff and lower
@@ -24,11 +24,11 @@ what to install:
     # - temurin21 # Java
     - git # Git for windows
     # - keepassxc # KeepassXC
-    - gh # GitHub command-line cli
+    # - gh # GitHub command-line cli
     # - firefox # firefox has really good cookie support under storage
     - msys2
-    - winmerge
-    - dotnet-9.0-sdk # .NET 9
+    # - winmerge
+    # - dotnet-9.0-sdk # .NET 9
     # - visualstudio2022community # Visual Studio 2022 community
     # - putty # Putty for SSH
     - openvpn-connect # OpenVPN 3.7.2 for connect
