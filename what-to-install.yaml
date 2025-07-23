@@ -63,3 +63,4 @@ minor:
   - you can install plugins. I think KeePassXC does not support plugins.
   - KeePassXC does support advanced; KeePass does not.
 # consider installing maven with choco install maven --yes
+# Consider installing Gradle with choco install gradle --yes
