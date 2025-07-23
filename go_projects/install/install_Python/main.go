@@ -86,7 +86,7 @@ func main() {
 	pip_executable := "pip"
 	_, err = exec.LookPath(pip_executable)
 	if err != nil {
-		fallback_pip := `C:\Python313\Scripts\pip.exe`
+		fallback_pip := `C:\Program Files\Python313\Scripts\pip.exe`
 		if _, stat_err := os.Stat(fallback_pip); stat_err == nil {
 			log.Printf("⚠️ 'pip' not found in PATH, using fallback: %s", fallback_pip)
 			pip_executable = fallback_pip
