@@ -19,7 +19,7 @@ what to install:
   choco:
     # - mobaxterm # MobaXTerm
     # - golang # Go
-    - notepadplusplus # Notepad++
+    # - notepadplusplus # Notepad++
     # - sqlitebrowser # SQLite Browser
     # - temurin21 # Java
     # - git # Git for windows
