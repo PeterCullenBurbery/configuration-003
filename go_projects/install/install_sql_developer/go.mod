@@ -2,7 +2,7 @@ module install_sql_developer
 
 go 1.24.4
 
-require github.com/PeterCullenBurbery/go_functions_002/v4 v4.7.0
+require github.com/PeterCullenBurbery/go_functions_002/v4 v4.9.0
 
 require (
 	github.com/go-ole/go-ole v1.3.0 // indirect
