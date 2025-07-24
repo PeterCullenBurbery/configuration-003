@@ -30,7 +30,7 @@ func main() {
 		// {"🍒 install_cherry_tree", "install_cherry_tree.exe", nil},
 		// {"🐍 install_miniconda", "install_miniconda.exe", nil},
 		// {"🐍 install_Python", "install_Python.exe", nil},
-		{"🧠 install_sql_developer", "install_sql_developer.exe", nil},
+		// {"🧠 install_sql_developer", "install_sql_developer.exe", nil},
 		// {"🧰 install_nirsoft", "install_nirsoft.exe", nil},
 		// {"🔧 install_sys_internals", "install_sys_internals.exe", nil},
 		// {"📸 install_ShareX", "install_ShareX.exe", nil},
