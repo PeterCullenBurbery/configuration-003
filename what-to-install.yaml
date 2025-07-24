@@ -64,3 +64,4 @@ minor:
   - KeePassXC does support advanced; KeePass does not.
 # consider installing maven with choco install maven --yes
 # Consider installing Gradle with choco install gradle --yes
+# choco install jq --yes
