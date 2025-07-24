@@ -1,5 +1,5 @@
-github.com/PeterCullenBurbery/go_functions_002/v3 v3.4.1 h1:xlmkT/2iKu6yt0RpHLyJCQLezft/Ed37G60VJOSOE8g=
-github.com/PeterCullenBurbery/go_functions_002/v3 v3.4.1/go.mod h1:Q7BBCQw4lkYRDDTssUfBi24W1E8rlO5+oJ9WnyFOh1A=
+github.com/PeterCullenBurbery/go_functions_002/v4 v4.7.0 h1:UflpQEgIovtaqez2/D1MI7/Vv1IeguzHqRNIz1hA7jc=
+github.com/PeterCullenBurbery/go_functions_002/v4 v4.7.0/go.mod h1:T87M8LQM6MU6nG31MG/hWN76kWycHUxCySI8NnPermo=
 github.com/go-ole/go-ole v1.3.0 h1:Dt6ye7+vXGIKZ7Xtk4s6/xVdGDQynvom7xCFEdWr6uE=
 github.com/go-ole/go-ole v1.3.0/go.mod h1:5LS6F96DhAwUc7C+1HLexzMXY1xGRSryjyPPKW6zv78=
 github.com/yeka/zip v0.0.0-20231116150916-03d6312748a9 h1:K8gF0eekWPEX+57l30ixxzGhHH/qscI3JCnuhbN6V4M=

@@ -3,7 +3,7 @@ module install_ShareX
 go 1.24.4
 
 require (
-	github.com/PeterCullenBurbery/go_functions_002/v3 v3.3.4
+	github.com/PeterCullenBurbery/go_functions_002/v4 v4.7.0
 	github.com/tidwall/gjson v1.18.0
 	github.com/tidwall/sjson v1.2.5
 )
