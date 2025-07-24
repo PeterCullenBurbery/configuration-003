@@ -1,5 +1,6 @@
 python packages:
   - arrow          # Better date/time handling
+  - certifi
   - faker          # Generate fake data (names, addresses, etc.)
   - funcy          # Functional programming utilities
   - keyboard       # Keyboard automation and hotkeys
