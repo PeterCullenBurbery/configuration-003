@@ -1,5 +1,5 @@
 vs_code_extensions:
-  # - golang.go # Go lang extension
+  - golang.go # Go lang extension
   # - mechatroner.rainbow-csv # Rainbow CSV for viewing CSV files
   # - ms-python.debugpy # Python extensions
   # - ms-python.python
@@ -9,11 +9,11 @@ vs_code_extensions:
   # - ms-toolsai.jupyter-renderers
   # - ms-toolsai.vscode-jupyter-cell-tags
   # - ms-toolsai.vscode-jupyter-slideshow
-  # - ms-vscode.powershell # Powershell
+  - ms-vscode.powershell # Powershell
   # - redhat.java # Java
   # - tomoki1207.pdf # PDF viewer
-  # - visualstudioexptteam.intellicode-api-usage-examples # intellisense
-  # - visualstudioexptteam.vscodeintellicode
+  - visualstudioexptteam.intellicode-api-usage-examples # intellisense
+  - visualstudioexptteam.vscodeintellicode
   # - vscjava.vscode-gradle # Gradle
   # - vscjava.vscode-java-debug # Java
   # - vscjava.vscode-java-dependency
