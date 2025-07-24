@@ -18,20 +18,20 @@ what to install:
     # - TheDocumentFoundation.LibreOffice # LibreOffice
   choco:
     # - mobaxterm # MobaXTerm
-    - golang # Go
+    # - golang # Go
     - notepadplusplus # Notepad++
     # - sqlitebrowser # SQLite Browser
     # - temurin21 # Java
-    - git # Git for windows
+    # - git # Git for windows
     # - keepassxc # KeepassXC
     # - gh # GitHub command-line cli
     # - firefox # firefox has really good cookie support under storage
-    - msys2
+    # - msys2
     # - winmerge
     # - dotnet-9.0-sdk # .NET 9
     # - visualstudio2022community # Visual Studio 2022 community
     # - putty # Putty for SSH
-    - openvpn-connect # OpenVPN 3.7.2 for connect
+    # - openvpn-connect # OpenVPN 3.7.2 for connect
     # - keepass # KeePass NOT KeePassXC
 # try to install Putty
 # install DBeaver too
