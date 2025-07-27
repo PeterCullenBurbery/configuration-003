@@ -18,7 +18,7 @@ what to install:
     # - TheDocumentFoundation.LibreOffice # LibreOffice
   choco:
     # - mobaxterm # MobaXTerm
-    - golang # Go
+    # - golang # Go
     - notepadplusplus # Notepad++
     # - sqlitebrowser # SQLite Browser
     # - temurin21 # Java

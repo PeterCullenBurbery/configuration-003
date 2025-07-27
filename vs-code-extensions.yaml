@@ -1,5 +1,5 @@
 vs_code_extensions:
-  - golang.go # Go lang extension
+  # - golang.go # Go lang extension
   # - mechatroner.rainbow-csv # Rainbow CSV for viewing CSV files
   # - ms-python.debugpy # Python extensions
   # - ms-python.python
