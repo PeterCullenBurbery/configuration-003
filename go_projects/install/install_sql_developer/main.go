@@ -3,7 +3,7 @@ package main
 import (
 	"log"
 	"os"
-	"os/exec"
+	// "os/exec"
 	"path/filepath"
 
 	"github.com/PeterCullenBurbery/go_functions_002/v4/date_time_functions"
@@ -71,30 +71,30 @@ func main() {
 	}
 	log.Println("✅ Shortcut created.")
 
-	// Download and execute part-004.exe from GitHub
-	log.Println("🌐 Downloading and executing part-004.exe from GitHub...")
+	// // Download and execute part-004.exe from GitHub
+	// log.Println("🌐 Downloading and executing part-004.exe from GitHub...")
 
-	blobURL := "https://github.com/PeterCullenBurbery/python-projects-semipublic/blob/main/gui_automation/sql_developer/sql_developer/sql_developer_004/dist/part-004.exe"
-	rawURL, err := system_management_functions.Convert_blob_to_raw_github_url(blobURL)
-	if err != nil {
-		log.Fatalf("❌ Failed to convert blob URL: %v", err)
-	}
+	// blobURL := "https://github.com/PeterCullenBurbery/python-projects-semipublic/blob/main/gui_automation/sql_developer/sql_developer/sql_developer_004/dist/part-004.exe"
+	// rawURL, err := system_management_functions.Convert_blob_to_raw_github_url(blobURL)
+	// if err != nil {
+	// 	log.Fatalf("❌ Failed to convert blob URL: %v", err)
+	// }
 
-	tempDir := os.TempDir()
-	destinationPath := filepath.Join(tempDir, "part_004.exe")
+	// tempDir := os.TempDir()
+	// destinationPath := filepath.Join(tempDir, "part_004.exe")
 
-	log.Printf("⬇️  Downloading to: %s", destinationPath)
-	if err := system_management_functions.Download_file(destinationPath, rawURL); err != nil {
-		log.Fatalf("❌ Download failed: %v", err)
-	}
-	log.Println("✅ Download complete.")
+	// log.Printf("⬇️  Downloading to: %s", destinationPath)
+	// if err := system_management_functions.Download_file(destinationPath, rawURL); err != nil {
+	// 	log.Fatalf("❌ Download failed: %v", err)
+	// }
+	// log.Println("✅ Download complete.")
 
-	log.Println("🚀 Running the downloaded program...")
-	cmd := exec.Command(destinationPath)
-	cmd.Stdout = os.Stdout
-	cmd.Stderr = os.Stderr
-	if err := cmd.Run(); err != nil {
-		log.Fatalf("❌ Execution failed: %v", err)
-	}
-	log.Println("✅ Execution complete.")
+	// log.Println("🚀 Running the downloaded program...")
+	// cmd := exec.Command(destinationPath)
+	// cmd.Stdout = os.Stdout
+	// cmd.Stderr = os.Stderr
+	// if err := cmd.Run(); err != nil {
+	// 	log.Fatalf("❌ Execution failed: %v", err)
+	// }
+	// log.Println("✅ Execution complete.")
 }
