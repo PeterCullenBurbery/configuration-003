@@ -33,6 +33,7 @@ what to install:
     # - putty # Putty for SSH
     - openvpn-connect # OpenVPN 3.7.2 for connect
     # - keepass # KeePass NOT KeePassXC
+    - gnu-units # GNU units
 # try to install Putty
 # install DBeaver too
 # install git for windows with choco install git -y
