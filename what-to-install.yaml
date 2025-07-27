@@ -26,7 +26,7 @@ what to install:
     # - keepassxc # KeepassXC
     # - gh # GitHub command-line cli
     # - firefox # firefox has really good cookie support under storage
-    - msys2
+    # - msys2
     # - winmerge
     # - dotnet-9.0-sdk # .NET 9
     # - visualstudio2022community # Visual Studio 2022 community
