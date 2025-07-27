@@ -27,13 +27,13 @@ what to install:
     # - gh # GitHub command-line cli
     # - firefox # firefox has really good cookie support under storage
     - msys2
-    - winmerge
+    # - winmerge
     # - dotnet-9.0-sdk # .NET 9
     # - visualstudio2022community # Visual Studio 2022 community
     # - putty # Putty for SSH
     - openvpn-connect # OpenVPN 3.7.2 for connect
     # - keepass # KeePass NOT KeePassXC
-    - gnu-units # GNU units
+    # - gnu-units # GNU units
 # try to install Putty
 # install DBeaver too
 # install git for windows with choco install git -y
