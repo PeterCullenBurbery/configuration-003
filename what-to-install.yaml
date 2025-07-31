@@ -13,7 +13,7 @@ what to install:
 # ThioJoe.SvgThumbnailExtension failed to install.
 # 2025/07/19 08:13:49 🚀 Starting installation of ThioJoe.SvgThumbnailExtension via winget...
 # 2025/07/19 08:13:49 ❌ Winget install failed for ThioJoe.SvgThumbnailExtension: ❌ Failed to install ThioJoe.SvgThumbnailExtension via winget: fork/exec C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps\winget.exe: The deployment operation failed because the specified application needs to be registered first.
-    # - DBeaver.DBeaver.Enterprise # Dbeaver
+    - DBeaver.DBeaver.Enterprise # Dbeaver
     # choco Dbeaver EE is out-of-date, but winget DBeaver EE is up to date. 25.1.0 currently at the moment.
     # - TheDocumentFoundation.LibreOffice # LibreOffice
   choco:
