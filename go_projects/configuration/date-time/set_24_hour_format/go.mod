@@ -2,7 +2,7 @@ module set_24_hour_format
 
 go 1.24.4
 
-require github.com/PeterCullenBurbery/go_functions_002/v2 v2.4.0
+require github.com/PeterCullenBurbery/go_functions_002/v4 v4.9.0
 
 require (
 	github.com/go-ole/go-ole v1.3.0 // indirect

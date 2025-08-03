@@ -2,7 +2,7 @@ module clean_path
 
 go 1.24.4
 
-require github.com/PeterCullenBurbery/go_functions_002/v4 v4.8.0
+require github.com/PeterCullenBurbery/go_functions_002/v5 v5.0.0
 
 require (
 	github.com/go-ole/go-ole v1.3.0 // indirect
