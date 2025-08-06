@@ -33,8 +33,21 @@ func main() {
 
 	// Install PowershellFunctions005 with Windows PowerShell
 	log.Println("📦 Installing PowershellFunctions005 with Windows PowerShell (powershell.exe)")
-	exec.Command("powershell.exe", "-NoProfile", "-Command", "Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force").Run()
-	exec.Command("powershell.exe", "-NoProfile", "-Command", "Set-PSRepository -Name PSGallery -InstallationPolicy Trusted").Run()
+
+	nuget_cmd := exec.Command("powershell.exe", "-NoProfile", "-Command", "Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force")
+	nuget_cmd.Stdout = os.Stdout
+	nuget_cmd.Stderr = os.Stderr
+	nuget_cmd.Run()
+
+	psget_cmd := exec.Command("powershell.exe", "-NoProfile", "-Command", "Install-Module PowerShellGet -Force -AllowClobber")
+	psget_cmd.Stdout = os.Stdout
+	psget_cmd.Stderr = os.Stderr
+	psget_cmd.Run()
+
+	trust_cmd := exec.Command("powershell.exe", "-NoProfile", "-Command", "Set-PSRepository -Name PSGallery -InstallationPolicy Trusted")
+	trust_cmd.Stdout = os.Stdout
+	trust_cmd.Stderr = os.Stderr
+	trust_cmd.Run()
 
 	cmd := exec.Command("powershell.exe", "-NoProfile", "-Command", "Install-Module -Name PowershellFunctions005 -Force")
 	cmd.Stdout = os.Stdout
