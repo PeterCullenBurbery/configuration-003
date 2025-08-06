@@ -1,3 +1,3 @@
-module install_pip_packages
+module install_Pip_packages
 
 go 1.24.5

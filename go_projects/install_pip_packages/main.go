@@ -53,13 +53,25 @@ func main() {
 	// Check if "pip" exists in PATH
 	_, err = exec.LookPath(pip_executable)
 	if err != nil {
-		// Fallback to known Miniconda path
-		alt_pip := `C:\ProgramData\Miniconda3\Scripts\pip.exe`
-		if _, stat_err := os.Stat(alt_pip); stat_err == nil {
-			log.Printf("⚠️ 'pip' not in PATH. Falling back to: %s", alt_pip)
-			pip_executable = alt_pip
-		} else {
-			log.Fatalf("❌ 'pip' not found and fallback pip.exe also missing.")
+		// List of fallback paths
+		fallback_paths := []string{
+			`C:\Program Files\Python313\Scripts\pip.exe`,
+			`C:\ProgramData\Miniconda3\Scripts\pip.exe`,
+			// Add more known locations here if needed
+		}
+
+		found := false
+		for _, path := range fallback_paths {
+			if _, stat_err := os.Stat(path); stat_err == nil {
+				pip_executable = path
+				log.Printf("⚠️ 'pip' not in PATH. Falling back to: %s", pip_executable)
+				found = true
+				break
+			}
+		}
+
+		if !found {
+			log.Fatalf("❌ 'pip' not found in PATH and no fallback pip.exe found.")
 		}
 	}
 
