@@ -1,0 +1,7 @@
+Write a Go program that downloads https://drive.google.com/file/d/1je7zuQItpU-2148SqyepgGLYqFV4TKJl/view?usp=drive_link to C:\downloads\oracle-database\.
+
+The file is "C:\Users\peter\Desktop\oracle-database\new_folder_known_as_folder\WINDOWS.X64_213000_db_home.zip".
+
+Extract the file to somewhere.
+
+Where should I extract WINDOWS.X64_213000_db_home.zip to? C:\oracle\product\021.003.000\dbhome_001.
