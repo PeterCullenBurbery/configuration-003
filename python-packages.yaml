@@ -3,6 +3,7 @@ python packages:
   - certifi
   - faker          # Generate fake data (names, addresses, etc.)
   - funcy          # Functional programming utilities
+  - ipython
   - keyboard       # Keyboard automation and hotkeys
   - matplotlib     # Plotting and visualization
   - more_itertools # Extra itertools recipes
