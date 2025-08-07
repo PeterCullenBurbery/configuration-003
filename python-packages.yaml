@@ -1,5 +1,6 @@
 python packages:
   - arrow          # Better date/time handling
+  - astropy # Astronomical calculations
   - certifi
   - faker          # Generate fake data (names, addresses, etc.)
   - funcy          # Functional programming utilities
@@ -10,6 +11,7 @@ python packages:
   - numpy          # Numerical computations and arrays
   - pandas         # Data manipulation and analysis
   - peter_cullen_burbery_python_functions # Peter Cullen Burbery Python functions.
+  - pint # units
   - pillow         # Image processing
   - prettytable    # Print tables in ASCII format
   - psutil         # System and process monitoring
