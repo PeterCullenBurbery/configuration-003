@@ -38,6 +38,7 @@ what to install:
     - Gradle # Gradle
     - jq # JSON (command-line JSON processor)
     - obs-studio # OBS Studio
+    - awscli # AWS cli
 # try to install Putty
 # install DBeaver too
 # install git for windows with choco install git -y
