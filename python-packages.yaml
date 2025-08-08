@@ -19,6 +19,7 @@ python packages:
   - pyautogui      # GUI automation (mouse, keyboard) # gui
   - pycryptodome   # Cryptography library (symmetric/asymmetric)
   - pyinstaller    # Bundle Python apps into standalone executables
+  - pyperclip # Clipboard support
   - pyscreeze      # Screenshot and image search support (used by pyautogui) # gui
   - pywinauto      # Windows GUI automation (controls, dialogs) # gui
   - stdlib_list    # List standard library modules for a specific Python version
