@@ -8,6 +8,8 @@ python packages:
   - ipython
   - keyboard       # Keyboard automation and hotkeys
   - matplotlib     # Plotting and visualization
+  - mkdocs # MkDocs
+  - mkdocs-material
   - more_itertools # Extra itertools recipes
   - numpy          # Numerical computations and arrays
   - pandas         # Data manipulation and analysis
