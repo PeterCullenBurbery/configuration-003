@@ -40,6 +40,7 @@ what to install:
     - obs-studio # OBS Studio
     - awscli # AWS cli
     - glab # GitLab cli
+    - brave # Brave browser
 # try to install Putty
 # install DBeaver too
 # install git for windows with choco install git -y
