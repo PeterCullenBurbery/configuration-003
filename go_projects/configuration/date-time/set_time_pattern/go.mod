@@ -2,7 +2,7 @@ module set_time_pattern
 
 go 1.24.4
 
-require github.com/PeterCullenBurbery/go_functions_002/v2 v2.4.0
+require github.com/PeterCullenBurbery/go_functions_002/v6 v6.0.1
 
 require (
 	github.com/go-ole/go-ole v1.3.0 // indirect
