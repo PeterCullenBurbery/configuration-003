@@ -8,8 +8,8 @@ import (
 
 	"gopkg.in/yaml.v3"
 
-	"github.com/PeterCullenBurbery/go_functions_002/v4/system_management_functions"
-	"github.com/PeterCullenBurbery/go_functions_002/v4/yaml_functions"
+	"github.com/PeterCullenBurbery/go_functions_002/v6/system_management_functions"
+	"github.com/PeterCullenBurbery/go_functions_002/v6/yaml_functions"
 )
 
 type WhatToInstall struct {
