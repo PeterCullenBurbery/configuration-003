@@ -8,7 +8,7 @@ import (
 )
 
 func main() {
-	ip, err := system_management_functions.Get_primary_ipv4_address()
+	ip, err := system_management_functions.Get_primary_ipv4_address_underscore()
 	if err != nil {
 		log.Fatalf("❌ Failed to get primary IPv4 address: %v", err)
 	}
