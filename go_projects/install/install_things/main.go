@@ -25,9 +25,9 @@ func main() {
 		exeName string
 		args    []string
 	}{
-		{"☕ install_java", "install_java.exe", nil},
-		{"📦 install_packages", "install_packages.exe", []string{yamlPath}},
-		{"🍒 install_cherry_tree", "install_cherry_tree.exe", nil},
+		// {"☕ install_java", "install_java.exe", nil},
+		// {"📦 install_packages", "install_packages.exe", []string{yamlPath}},
+		// {"🍒 install_cherry_tree", "install_cherry_tree.exe", nil},
 		// {"🐍 install_miniconda", "install_miniconda.exe", nil},
 		// {"🐍 install_Python", "install_Python.exe", nil},
 		// {"🧠 install_sql_developer", "install_sql_developer.exe", nil},
