@@ -41,6 +41,7 @@ what to install:
     - awscli # AWS cli
     - glab # GitLab cli
     - brave # Brave browser
+    - dbeaver # DBeaver community edition (just in case enterprise edition is not working.).
 # try to install Putty
 # install DBeaver too
 # install git for windows with choco install git -y
