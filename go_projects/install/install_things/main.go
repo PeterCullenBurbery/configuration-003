@@ -17,7 +17,7 @@ func main() {
 	baseDir := os.Args[1]
 
 	// Paths
-	// yamlPath := filepath.Join(baseDir, "what-to-install.yaml")
+	yamlPath := filepath.Join(baseDir, "what-to-install.yaml")
 	projectsDir := filepath.Join(baseDir, "go_projects", "install")
 
 	installSteps := []struct {
@@ -26,7 +26,7 @@ func main() {
 		args    []string
 	}{
 		// {"☕ install_java", "install_java.exe", nil},
-		// {"📦 install_packages", "install_packages.exe", []string{yamlPath}},
+		{"📦 install_packages", "install_packages.exe", []string{yamlPath}},
 		// {"🍒 install_cherry_tree", "install_cherry_tree.exe", nil},
 		// {"🐍 install_miniconda", "install_miniconda.exe", nil},
 		// {"🐍 install_Python", "install_Python.exe", nil},
