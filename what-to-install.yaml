@@ -45,6 +45,7 @@ what to install:
     - cyberduck  # Cyberduck
     - openssh # OpenSSH
     - winrar # Winrar
+    - beyondcompare # Beyond Compare 5
 # try to install Putty
 # install DBeaver too
 # install git for windows with choco install git -y
