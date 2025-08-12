@@ -56,9 +56,9 @@ func main() {
         label    string
         exe_name string
     }{
-        // {"🗓️ set_short_date_pattern", "set_short_date_pattern.exe"},
-        // {"📆 set_long_date_pattern", "set_long_date_pattern.exe"},
-        // {"⏰ set_time_pattern", "set_time_pattern.exe"},
+        {"🗓️ set_short_date_pattern", "set_short_date_pattern.exe"},
+        {"📆 set_long_date_pattern", "set_long_date_pattern.exe"},
+        {"⏰ set_time_pattern", "set_time_pattern.exe"},
         {"🕐 set_24_hour_format", "set_24_hour_format.exe"},
         {"📅 Set_first_day_of_week_Monday", "Set_first_day_of_week_Monday.exe"},
     }
