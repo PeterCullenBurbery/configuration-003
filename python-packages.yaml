@@ -1,28 +1,29 @@
 python packages:
-  - arrow          # Better date/time handling
-  - astropy # Astronomical calculations
-  - certifi
-  - faker          # Generate fake data (names, addresses, etc.)
-  - funcy          # Functional programming utilities
-  - gdown # Google Drive
-  - ipython
-  - keyboard       # Keyboard automation and hotkeys
-  - matplotlib     # Plotting and visualization
-  - mkdocs # MkDocs
-  - mkdocs-material
-  - more_itertools # Extra itertools recipes
-  - numpy          # Numerical computations and arrays
-  - pandas         # Data manipulation and analysis
+  - arrow                # Better date/time handling
+  - astropy              # Astronomical calculations
+  - azure-storage-blob   # Azure Blob Storage client
+  - boto3                # AWS SDK for Python
+  - certifi              # Root certificates for SSL verification
+  - faker                # Generate fake data (names, addresses, etc.)
+  - funcy                # Functional programming utilities
+  - gdown                # Google Drive
+  - ipython              # Interactive Python shell
+  - keyboard             # Keyboard automation and hotkeys
+  - matplotlib           # Plotting and visualization
+  - mkdocs               # MkDocs
+  - mkdocs-material      # Material theme for MkDocs
+  - more_itertools       # Extra itertools recipes
+  - mss                  # Screenshotting library
+  - numpy                # Numerical computations and arrays
+  - oci                  # Oracle Cloud Infrastructure SDK
+  - pandas               # Data manipulation and analysis
   - peter_cullen_burbery_python_functions # Peter Cullen Burbery Python functions.
-  - pint # units
-  - pillow         # Image processing
-  - prettytable    # Print tables in ASCII format
-  - psutil         # System and process monitoring
-  - pyautogui      # GUI automation (mouse, keyboard) # gui
-  - pycryptodome   # Cryptography library (symmetric/asymmetric)
-  - pyinstaller    # Bundle Python apps into standalone executables
-  - pyperclip # Clipboard support
-  - pyscreeze      # Screenshot and image search support (used by pyautogui) # gui
-  - pywinauto      # Windows GUI automation (controls, dialogs) # gui
-  - stdlib_list    # List standard library modules for a specific Python version
-  - sympy          # Symbolic mathematics (algebra, calculus, etc.)
+  - pillow               # Image processing
+  - pint                 # Units
+  - prettytable          # Print tables in ASCII format
+  - psutil               # System and process monitoring
+  - pyautogui            # GUI automation (mouse, keyboard) # gui
+  - pyscreeze            # Screenshot and image search support (used by pyautogui) # gui
+  - pywinauto            # Windows GUI automation (controls, dialogs) # gui
+  - stdlib_list          # List standard library modules for a specific Python version
+  - sympy                # Symbolic mathematics (algebra, calculus, etc.)
