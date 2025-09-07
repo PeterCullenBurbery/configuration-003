@@ -7,6 +7,7 @@ python packages:
   - faker                # Generate fake data (names, addresses, etc.)
   - funcy                # Functional programming utilities
   - gdown                # Google Drive
+  - google-cloud-storage # Google Cloud Storage client
   - ipython              # Interactive Python shell
   - keyboard             # Keyboard automation and hotkeys
   - matplotlib           # Plotting and visualization
