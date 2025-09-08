@@ -18,6 +18,7 @@ python packages:
   - numpy                # Numerical computations and arrays
   - oci                  # Oracle Cloud Infrastructure SDK
   - oci-cli              # Oracle Cloud Infrastructure command-line interface
+  - oss2                 # Alibaba Cloud Object Storage Service client
   - pandas               # Data manipulation and analysis
   - peter_cullen_burbery_python_functions # Peter Cullen Burbery Python functions.
   - pillow               # Image processing
