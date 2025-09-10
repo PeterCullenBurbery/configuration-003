@@ -29,7 +29,9 @@ python packages:
   - pycryptodome         # Cryptography library (symmetric/asymmetric)
   - pyinstaller          # Bundle Python apps into standalone executables
   - pyperclip            # Clipboard support
+  - pyscreenshot         # Screenshot capture on multiple backends
   - pyscreeze            # Screenshot and image search support (used by pyautogui) # gui
   - pywinauto            # Windows GUI automation (controls, dialogs) # gui
+  - qcloud_cos           # Tencent Cloud Object Storage (COS) SDK
   - stdlib_list          # List standard library modules for a specific Python version
   - sympy                # Symbolic mathematics (algebra, calculus, etc.)
