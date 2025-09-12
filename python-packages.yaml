@@ -2,6 +2,7 @@ python packages:
   - arrow                # Better date/time handling
   - astropy              # Astronomical calculations
   - azure-storage-blob   # Azure Blob Storage client
+  - b2sdk                # Backblaze B2 Cloud Storage SDK
   - boto3                # AWS SDK for Python
   - certifi              # Root certificates for SSL verification
   - cos-python-sdk-v5    # Tencent Cloud Object Storage (COS) SDK v5
