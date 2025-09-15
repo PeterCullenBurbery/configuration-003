@@ -1,6 +1,7 @@
 python packages:
   - arrow                # Better date/time handling
   - astropy              # Astronomical calculations
+  - azure-identity       # Azure Identity authentication (credentials for Azure SDKs)
   - azure-storage-blob   # Azure Blob Storage client
   - b2sdk                # Backblaze B2 Cloud Storage SDK
   - boto3                # AWS SDK for Python
