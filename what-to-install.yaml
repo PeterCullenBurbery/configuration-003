@@ -82,3 +82,4 @@ minor:
 # add ditto. choco install ditto.
 # add jetbrains toolbox app
 # choco install jetbrainstoolbox -y
+# install FFmpeg choco install ffmpeg-full -y
