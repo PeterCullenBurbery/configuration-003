@@ -39,3 +39,4 @@ python packages:
   - sympy                # Symbolic mathematics (algebra, calculus, etc.)
   # add yfinance
   # add moviepy
+  # pykeepass
