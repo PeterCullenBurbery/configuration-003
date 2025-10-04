@@ -106,6 +106,7 @@ what to install:
     - jetbrainstoolbox
     - ffmpeg-full
     - vivaldi
+    - directory-opus
 KeePass has some advantages over KeePassXC like:
   - KeePass does not disappear when you try to take a screenshot
   - whereas KeePassXC will disappear when you take a screenshot
