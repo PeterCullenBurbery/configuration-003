@@ -47,28 +47,11 @@ what to install:
     - winrar # Winrar
     - beyondcompare # Beyond Compare 5
     - rustdesk
-# try to install Putty
-# install DBeaver too
-# install git for windows with choco install git -y
-# install KeepassXC with choco install keepassxc -y
-# install github cli with choco install gh -y
-# also consider adding automatic download Oracle instant client from https://www.oracle.com/database/technologies/instant-client/winx64-64-downloads.html
-# it might be worth installing firefox by default because firefox has really good cookie support under storage
-# Look into installing Powershell Plus.
-# There's also an IntelliJ plugin for Powershell.
-# Consider install msys64 with choco install msys2 -y
-# consider installing winmerge with choco install winmerge -y
-# consider installing devtoys
-# consider installing .net 9
-# consider installing visualstudiocommunity with choco install visualstudio2022community --yes
-# consider installing winget install ThioJoe.SvgThumbnailExtension
-# consider installing C# vscode extension
-# You need to install C++ desktop development and .net development
-# install "Auto save file" for Visual Studio 2022
-# consider adding openvpn too choco install openvpn-connect --yes
-# consider installing wiztree
-# consider installing everything with choco instead of winget choco install everything --yes
-# consider installing LibreOffice with winget install TheDocumentFoundation.LibreOffice
+    - wiztree
+    - everything
+    - ditto
+    - jetbrainstoolbox
+    - ffmpeg-full
 KeePass has some advantages over KeePassXC like:
   - KeePass does not disappear when you try to take a screenshot
   - whereas KeePassXC will disappear when you take a screenshot
@@ -76,10 +59,3 @@ KeePass has some advantages over KeePassXC like:
 minor:
   - you can install plugins. I think KeePassXC does not support plugins.
   - KeePassXC does support advanced; KeePass does not.
-# consider installing maven with choco install maven --yes
-# Consider installing Gradle with choco install gradle --yes
-# choco install jq --yes
-# add ditto. choco install ditto.
-# add jetbrains toolbox app
-# choco install jetbrainstoolbox -y
-# install FFmpeg choco install ffmpeg-full -y
