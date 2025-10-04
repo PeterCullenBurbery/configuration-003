@@ -36,6 +36,36 @@ what to install:
     # choco Dbeaver EE is out-of-date, but winget DBeaver EE is up to date. 25.1.0 currently at the moment.
     # choco has dbeaver-ee 7.3.0, which is way out of date.
     - TheDocumentFoundation.LibreOffice # LibreOffice
+    # It looks like winget has better support for LibreOffice. It looks like choco has worse support for LibreOffice.
+    #   2025_010_004_010_058_025_470724500_America_slash_New_York_2025_W040_006_2025_277_1759589905_470724500_192_168_004_042_C_IHH4ITJGB9PBF_C_IHH4ITJGB9PBF_backslash_peter_Powershell_7_5_3
+    # C:\Users\peter\Desktop> choco search libreoffice
+    # Chocolatey v2.4.1
+    # crosextrafonts-caladea-font 2013.2.14 [Approved]
+    # hunspell.portable 1.7.0 [Approved] Downloads cached for licensed users
+    # libreoffice 5.4.4.20180111 [Approved]
+    # libreoffice-fresh 25.8.1 [Approved] Downloads cached for licensed users
+    # libreoffice-help 5.2.0 [Approved] - Possibly broken
+    # libreoffice-oldstable 5.3.7.20180111 [Approved]
+    # libreoffice-sdk 25.2.5 [Approved] Downloads cached for licensed users
+    # libreoffice-still 25.2.6 [Approved] Downloads cached for licensed users
+    # pandoc 3.8.1 [Approved]
+    # passcovery 3.1.0 [Approved] Downloads cached for licensed users - Possibly broken for FOSS users (due to original download location changes by vendor)
+    # Pencil 3.1.1 [Approved]
+    # pspp 1.4.1 [Approved]
+    # Sigil 2.6.2 [Approved] Downloads cached for licensed users
+    # unofficial-google-docs-client 2022.6.1.20220727 [Approved] Downloads cached for licensed users
+    # zotero 7.0.24 [Approved]
+    # zotero-standalone 5.0.55.20181119 [Approved]
+    # 16 packages found.
+    # 2025_010_004_010_058_031_941336200_America_slash_New_York_2025_W040_006_2025_277_1759589911_941336200_192_168_004_042_C_IHH4ITJGB9PBF_C_IHH4ITJGB9PBF_backslash_peter_Powershell_7_5_3
+    # C:\Users\peter\Desktop> winget search libreoffice
+    # Name                  Id                                         Version  Match            Source
+    # -------------------------------------------------------------------------------------------------
+    # LibreOffice           TheDocumentFoundation.LibreOffice          25.8.1.1                  winget
+    # LibreOffice Help Pack TheDocumentFoundation.LibreOffice.HelpPack 25.8.1.1 Tag: libreoffice winget
+    # LibreOffice SDK       TheDocumentFoundation.LibreOffice.SDK      25.8.1.1 Tag: libreoffice winget
+    # 2025_010_004_010_058_039_197090200_America_slash_New_York_2025_W040_006_2025_277_1759589919_197090200_192_168_004_042_C_IHH4ITJGB9PBF_C_IHH4ITJGB9PBF_backslash_peter_Powershell_7_5_3
+    # C:\Users\peter\Desktop>
   choco:
     - vscode
     - 7zip
