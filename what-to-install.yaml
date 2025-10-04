@@ -2,7 +2,6 @@ what to install:
   winget:
     - Microsoft.PowerShell # Powershell 7
     - Microsoft.VisualStudioCode # Vs code
-    - 7zip.7zip # 7zip
     - voidtools.Everything # Voidtools everything
     - WinSCP.WinSCP # WinSCP
     - ApacheFriends.Xampp.8.2 # XAMPP
@@ -17,6 +16,7 @@ what to install:
     # choco Dbeaver EE is out-of-date, but winget DBeaver EE is up to date. 25.1.0 currently at the moment.
     - TheDocumentFoundation.LibreOffice # LibreOffice
   choco:
+    - 7zip
     - mobaxterm # MobaXTerm
     - golang # Go
     - notepadplusplus # Notepad++
