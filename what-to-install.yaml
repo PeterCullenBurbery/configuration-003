@@ -2,13 +2,36 @@ what to install:
   winget:
     - Microsoft.PowerShell # Powershell 7
     - ApacheFriends.Xampp.8.2 # XAMPP
-    # - DevToys-app.DevToys # DevToys
-    # has diff and lower
-    # DevToys doesn't work (at the moment). I don't know why.
-    # - ThioJoe.SvgThumbnailExtension # to view SVGs in file explorer
-# ThioJoe.SvgThumbnailExtension failed to install.
-# 2025/07/19 08:13:49 🚀 Starting installation of ThioJoe.SvgThumbnailExtension via winget...
-# 2025/07/19 08:13:49 ❌ Winget install failed for ThioJoe.SvgThumbnailExtension: ❌ Failed to install ThioJoe.SvgThumbnailExtension via winget: fork/exec C:\Users\Administrator\AppData\Local\Microsoft\WindowsApps\winget.exe: The deployment operation failed because the specified application needs to be registered first.
+    # choco has xamp 8.1, whereas winget has xamp 8.2, so go with winget for xamp.
+    # 2025_010_004_010_041_051_966518500_America_slash_New_York_2025_W040_006_2025_277_1759588911_966518500_192_168_004_042_C_IHH4ITJGB9PBF_C_IHH4ITJGB9PBF_backslash_peter_Powershell_7_5_3
+    # C:\Users\peter\Desktop> choco search xamp   
+    # Chocolatey v2.4.1
+    # Bitnami-XAMPP 7.4.13.20220415 [Approved]
+    # XAMPP 7.4.13.20220415 [Approved]
+    # XAMPP.app 7.4.13.20220415 [Approved]
+    # XAMPP.tool 7.4.13.20220415 [Approved]
+    # XAMPP-72 7.2.34.20220415 [Approved] Downloads cached for licensed users - Possibly broken for FOSS users (due to original download location changes by vendor)
+    # XAMPP-73 7.3.33.20220415 [Approved] Downloads cached for licensed users
+    # XAMPP-74 7.4.29 [Approved] Downloads cached for licensed users - Possibly broken for FOSS users (due to original download location changes by vendor)
+    # XAMPP-80 8.0.19 [Approved] Downloads cached for licensed users
+    # XAMPP-81 8.1.6 [Approved] Downloads cached for licensed users
+    # xampproot 1.0.0 [Approved]
+    # 10 packages found.
+    # 2025_010_004_010_041_056_809353900_America_slash_New_York_2025_W040_006_2025_277_1759588916_809353900_192_168_004_042_C_IHH4ITJGB9PBF_C_IHH4ITJGB9PBF_backslash_peter_Powershell_7_5_3
+    # C:\Users\peter\Desktop>
+
+    # PS C:\Users\peter\Desktop> winget search xamp
+    # Name                Id                       Version  Match                 Source
+    # ----------------------------------------------------------------------------------
+    # XAMPP 8.1           ApacheFriends.Xampp.8.1  8.1.25-0                       winget
+    # XAMPP 8.2           ApacheFriends.Xampp.8.2  8.2.12-0                       winget
+    # Example CLI         Flowscripter.example-cli 1.0.9                          winget
+    # Plexamp             Plex.Plexamp             4.12.3                         winget
+    # tokei               XAMPPRocky.Tokei         12.1.2                         winget
+    # AppFlowy            AppFlowy.AppFlowy        0.10.0   Tag: flutter-examples winget
+    # Virtual-ZPL-Printer Porrey.VirtualZPLPrinter 3.4.0    Tag: example          winget
+    # Objeck              RandyHollines.Objeck     2024.4.1 Tag: examples         winget
+    # PS C:\Users\peter\Desktop>
     - DBeaver.DBeaver.Enterprise # Dbeaver
     # choco Dbeaver EE is out-of-date, but winget DBeaver EE is up to date. 25.1.0 currently at the moment.
     # choco has dbeaver-ee 7.3.0, which is way out of date.
