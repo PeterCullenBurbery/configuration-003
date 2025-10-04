@@ -2,7 +2,6 @@ what to install:
   winget:
     - Microsoft.PowerShell # Powershell 7
     - Microsoft.VisualStudioCode # Vs code
-    - WinSCP.WinSCP # WinSCP
     - ApacheFriends.Xampp.8.2 # XAMPP
     # - DevToys-app.DevToys # DevToys
     # has diff and lower
@@ -16,6 +15,7 @@ what to install:
     - TheDocumentFoundation.LibreOffice # LibreOffice
   choco:
     - 7zip
+    - winscp
     - mobaxterm # MobaXTerm
     - golang # Go
     - notepadplusplus # Notepad++
