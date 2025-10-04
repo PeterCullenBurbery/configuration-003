@@ -1,6 +1,5 @@
 what to install:
   winget:
-    - Microsoft.PowerShell # Powershell 7
     - ApacheFriends.Xampp.8.2 # XAMPP
     # choco has xamp 8.1, whereas winget has xamp 8.2, so go with winget for xamp.
     # 2025_010_004_010_041_051_966518500_America_slash_New_York_2025_W040_006_2025_277_1759588911_966518500_192_168_004_042_C_IHH4ITJGB9PBF_C_IHH4ITJGB9PBF_backslash_peter_Powershell_7_5_3
@@ -67,6 +66,7 @@ what to install:
     # 2025_010_004_010_058_039_197090200_America_slash_New_York_2025_W040_006_2025_277_1759589919_197090200_192_168_004_042_C_IHH4ITJGB9PBF_C_IHH4ITJGB9PBF_backslash_peter_Powershell_7_5_3
     # C:\Users\peter\Desktop>
   choco:
+    - powershell-core # Powershell 7
     - vscode
     - 7zip
     - winscp
