@@ -37,6 +37,10 @@ python packages:
   - pywinauto            # Windows GUI automation (controls, dialogs) # gui
   - stdlib_list          # List standard library modules for a specific Python version
   - sympy                # Symbolic mathematics (algebra, calculus, etc.)
+  - yfinance
+  - moviepy
+  - pykeepass
+  - psycopg2
   # add yfinance
   # add moviepy
   # pykeepass
