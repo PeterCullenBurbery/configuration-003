@@ -97,7 +97,7 @@ what to install:
     - dbeaver # DBeaver community edition (just in case enterprise edition is not working.).
     # - cyberduck  # Cyberduck
     - openssh # OpenSSH
-    - winrar # Winrar
+    # - winrar # Winrar
     - beyondcompare # Beyond Compare 5
     - rustdesk
     - wiztree
