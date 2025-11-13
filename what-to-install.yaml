@@ -69,22 +69,22 @@ what to install:
     - powershell-core # Powershell 7
     - vscode
     - 7zip
-    - winscp
-    - mobaxterm # MobaXTerm
+    # - winscp
+    # - mobaxterm # MobaXTerm
     - golang # Go
     - notepadplusplus # Notepad++
-    - sqlitebrowser # SQLite Browser
+    # - sqlitebrowser # SQLite Browser
     - temurin21 # Java
     - git # Git for windows
     - keepassxc # KeepassXC
-    - gh # GitHub command-line cli
-    - firefox # firefox has really good cookie support under storage
-    - msys2
-    - winmerge
+    # - gh # GitHub command-line cli
+    # - firefox # firefox has really good cookie support under storage
+    # - msys2
+    # - winmerge
     - dotnet-9.0-sdk # .NET 9
     - visualstudio2022community # Visual Studio 2022 community
     - putty # Putty for SSH
-    - openvpn-connect # OpenVPN 3.7.2 for connect
+    # - openvpn-connect # OpenVPN 3.7.2 for connect
     - keepass # KeePass NOT KeePassXC
     - gnu-units # GNU units
     - maven # Maven
@@ -95,7 +95,7 @@ what to install:
     - glab # GitLab cli
     - brave # Brave browser
     - dbeaver # DBeaver community edition (just in case enterprise edition is not working.).
-    - cyberduck  # Cyberduck
+    # - cyberduck  # Cyberduck
     - openssh # OpenSSH
     - winrar # Winrar
     - beyondcompare # Beyond Compare 5
@@ -105,8 +105,8 @@ what to install:
     - ditto
     - jetbrainstoolbox
     - ffmpeg-full
-    - vivaldi
-    - directory-opus
+    # - vivaldi
+    # - directory-opus
     - evernote
 KeePass has some advantages over KeePassXC like:
   - KeePass does not disappear when you try to take a screenshot
