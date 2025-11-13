@@ -100,7 +100,7 @@ what to install:
     # - winrar # Winrar
     - beyondcompare # Beyond Compare 5
     - rustdesk
-    - wiztree
+    # - wiztree
     - everything
     - ditto
     - jetbrainstoolbox
