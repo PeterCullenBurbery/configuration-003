@@ -48,3 +48,37 @@ python packages:
   - comtypes
   - rich
   - tzlocal
+  - jupyterlab
+  - notebook
+  - ipykernel
+  - jupyterlab-code-formatter
+  - nbformat
+  - nbconvert
+  - ipywidgets
+  - seaborn
+  - plotly
+  - bokeh
+  - altair
+  - folium
+  - pyviz
+  - holoviews
+  - polars
+  - pyarrow
+  - tables
+  - fastparquet
+  - openpyxl
+  - sqlalchemy
+  - scipy
+  - statsmodels
+  - scikit-learn
+  - numba
+  - tqdm
+  - loguru
+  - python-dotenv
+  - python-dateutil
+  - imageio
+  - black
+  - memory_profiler
+  - line_profiler
+  - pymdown-extensions
+  - markdown
