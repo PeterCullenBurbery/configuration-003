@@ -88,7 +88,7 @@ what to install:
     # - keepass # KeePass NOT KeePassXC
     - gnu-units # GNU units
     - maven # Maven
-    - Gradle # Gradle
+    # - Gradle # Gradle
     - jq # JSON (command-line JSON processor)
     - obs-studio # OBS Studio
     - awscli # AWS cli
