@@ -45,6 +45,6 @@ python packages:
   - ipython-sql
   - psycopg2-binary
   - pycaw
-  - comptypes
+  - comtypes
   - rich
   - tzlocal
