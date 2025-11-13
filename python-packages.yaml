@@ -41,3 +41,10 @@ python packages:
   - moviepy
   - pykeepass
   - psycopg2
+  - netifaces
+  - ipython-sql
+  - psycopg2-binary
+  - pycaw
+  - comptypes
+  - rich
+  - tzlocal
