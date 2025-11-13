@@ -1,6 +1,6 @@
 what to install:
   winget:
-    - ApacheFriends.Xampp.8.2 # XAMPP
+    # - ApacheFriends.Xampp.8.2 # XAMPP
     # choco has xamp 8.1, whereas winget has xamp 8.2, so go with winget for xamp.
     # 2025_010_004_010_041_051_966518500_America_slash_New_York_2025_W040_006_2025_277_1759588911_966518500_192_168_004_042_C_IHH4ITJGB9PBF_C_IHH4ITJGB9PBF_backslash_peter_Powershell_7_5_3
     # C:\Users\peter\Desktop> choco search xamp   
@@ -31,10 +31,10 @@ what to install:
     # Virtual-ZPL-Printer Porrey.VirtualZPLPrinter 3.4.0    Tag: example          winget
     # Objeck              RandyHollines.Objeck     2024.4.1 Tag: examples         winget
     # PS C:\Users\peter\Desktop>
-    - DBeaver.DBeaver.Enterprise # Dbeaver
+    # - DBeaver.DBeaver.Enterprise # Dbeaver
     # choco Dbeaver EE is out-of-date, but winget DBeaver EE is up to date. 25.1.0 currently at the moment.
     # choco has dbeaver-ee 7.3.0, which is way out of date.
-    - TheDocumentFoundation.LibreOffice # LibreOffice
+    # - TheDocumentFoundation.LibreOffice # LibreOffice
     # It looks like winget has better support for LibreOffice. It looks like choco has worse support for LibreOffice.
     #   2025_010_004_010_058_025_470724500_America_slash_New_York_2025_W040_006_2025_277_1759589905_470724500_192_168_004_042_C_IHH4ITJGB9PBF_C_IHH4ITJGB9PBF_backslash_peter_Powershell_7_5_3
     # C:\Users\peter\Desktop> choco search libreoffice
