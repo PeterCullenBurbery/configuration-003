@@ -82,3 +82,4 @@ python packages:
   - line_profiler
   - pymdown-extensions
   - markdown
+  - geopy
