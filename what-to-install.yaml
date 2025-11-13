@@ -82,10 +82,10 @@ what to install:
     # - msys2
     # - winmerge
     - dotnet-9.0-sdk # .NET 9
-    - visualstudio2022community # Visual Studio 2022 community
-    - putty # Putty for SSH
+    # - visualstudio2022community # Visual Studio 2022 community
+    # - putty # Putty for SSH
     # - openvpn-connect # OpenVPN 3.7.2 for connect
-    - keepass # KeePass NOT KeePassXC
+    # - keepass # KeePass NOT KeePassXC
     - gnu-units # GNU units
     - maven # Maven
     - Gradle # Gradle
