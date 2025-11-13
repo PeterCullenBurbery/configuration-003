@@ -90,7 +90,7 @@ what to install:
     - maven # Maven
     # - Gradle # Gradle
     - jq # JSON (command-line JSON processor)
-    - obs-studio # OBS Studio
+    # - obs-studio # OBS Studio
     - awscli # AWS cli
     - glab # GitLab cli
     - brave # Brave browser
