@@ -83,3 +83,9 @@ python packages:
   - pymdown-extensions
   - markdown
   - geopy
+  - panel
+  - hvplot
+  - datashader
+  - param
+  - pyct
+  - scikit-image
