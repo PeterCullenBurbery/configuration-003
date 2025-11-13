@@ -82,10 +82,23 @@ python packages:
   - line_profiler
   - pymdown-extensions
   - markdown
-  - geopy
   - panel
   - hvplot
   - datashader
   - param
   - pyct
   - scikit-image
+  - geopy
+  - shapely
+  - pyproj
+  - geopandas
+  - rtree
+  - fiona
+  - rasterio
+  - rio-cogeo
+  - xarray
+  - rioxarry
+  - osmnx
+  - h3
+  - geotiler
+  - pysal
