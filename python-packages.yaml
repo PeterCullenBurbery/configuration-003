@@ -103,3 +103,6 @@ python packages:
   - geotiler
   - pysal
   - usaddress
+  - google-auth
+  - google-auth-oauthlib
+  - google-api-python-client
