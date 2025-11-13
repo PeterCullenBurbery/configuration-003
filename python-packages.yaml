@@ -97,7 +97,7 @@ python packages:
   - rasterio
   - rio-cogeo
   - xarray
-  - rioxarry
+  - rioxarray
   - osmnx
   - h3
   - geotiler
