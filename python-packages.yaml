@@ -107,3 +107,4 @@ python packages:
   - google-auth-oauthlib
   - google-api-python-client
   - jupyterlab_execute_time
+  - pyyaml
