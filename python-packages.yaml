@@ -60,7 +60,6 @@ python packages:
   - bokeh
   - altair
   - folium
-  - pyviz
   - holoviews
   - polars
   - pyarrow
@@ -108,3 +107,60 @@ python packages:
   - google-api-python-client
   - jupyterlab_execute_time
   - pyyaml
+  - argon2-cffi
+  - lxml
+  - beautifulsoup4
+  - simpleaudio
+  - sounddevice
+  - pydub
+  - pygame
+  - PyDictionary
+  - nltk
+  - jupyterlab-commenting-service
+  - pipdeptree
+  - pynput
+  - google-auth-httplib2
+  - imapclient
+  - pyzmail36
+  - httpx
+  - asyncio
+  - plotext
+  - termplotlib
+  - speedtest-cli
+  - pywin32
+  - jedi
+  - jupyter_contrib_nbextensions
+  - python-binance
+  - pyotp
+  - xml2rfc
+  - dash
+  - jupyter-book
+  - ghp-import
+  - WMI
+  - botocore
+  - build
+  - twine
+  - setuptools
+  - wheel
+  - click
+  - typer
+  - fire
+  - pytest
+  - pytest-cov
+  - coverage
+  - tox
+  - cryptography
+  - aiohttp
+  - fastapi
+  - flask
+  - uvicorn
+  - virtualenv
+  - pipenv
+  - poetry
+  - icecream
+  - requests
+  - mypy
+  - ipynbname
+  - screeninfo
+  - mpmath
+  - packaging
