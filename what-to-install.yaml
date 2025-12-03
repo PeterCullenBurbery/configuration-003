@@ -1,5 +1,7 @@
 what to install:
   winget:
+    - KeePassXCTeam.KeePassXC # KeePassXC
+    # KeePassXC is more up to date on winget than on choco. KeePassXC winget is 2.7.11. choco KeePassXC is 2.7.10. Therefore, winget is more up-to-date.
     # - ApacheFriends.Xampp.8.2 # XAMPP
     # choco has xamp 8.1, whereas winget has xamp 8.2, so go with winget for xamp.
     # 2025_010_004_010_041_051_966518500_America_slash_New_York_2025_W040_006_2025_277_1759588911_966518500_192_168_004_042_C_IHH4ITJGB9PBF_C_IHH4ITJGB9PBF_backslash_peter_Powershell_7_5_3
@@ -76,7 +78,6 @@ what to install:
     # - sqlitebrowser # SQLite Browser
     - temurin21 # Java
     - git # Git for windows
-    - keepassxc # KeepassXC
     # - gh # GitHub command-line cli
     # - firefox # firefox has really good cookie support under storage
     # - msys2
