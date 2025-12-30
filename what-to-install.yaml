@@ -111,6 +111,7 @@ what to install:
     - evernote
     - qbittorrent
     - cherrytree # version 1.6.2 is available on choco.
+    - github-desktop
 KeePass has some advantages over KeePassXC like:
   - KeePass does not disappear when you try to take a screenshot
   - whereas KeePassXC will disappear when you take a screenshot
