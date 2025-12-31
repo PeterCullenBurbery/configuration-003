@@ -78,7 +78,7 @@ what to install:
     # - sqlitebrowser # SQLite Browser
     - temurin21 # Java
     - git # Git for windows
-    # - gh # GitHub command-line cli
+    - gh # GitHub command-line cli
     # - firefox # firefox has really good cookie support under storage
     # - msys2
     # - winmerge
